@@ -1,32 +1,39 @@
-<!doctype html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
-<!doctype html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Map Bounds Restriction</title>
-
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./scipt.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pondicherry University Green Mapping</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="scipt.js"></script>
   </head>
   <body>
-    <div id="map"></div>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h2>Green Mapping</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Map</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
 
-    <!-- 
-      The `defer` attribute causes the script to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises. See
-      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header Section -->
+      <header>
+        <h1>Pondicherry University Green Mapping</h1>
+        <p>
+          Explore the geolocation of plants and track route changes over time.
+        </p>
+      </header>
+
+      <!-- Google Map Container -->
+      <div id="map"></div>
+    </div>
+
+    <!-- Google Maps API -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly"
       defer
