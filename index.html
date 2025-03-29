@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pondicherry University Green Mapping</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="scipt.js"></script>
+    <script src="scipt.js"></script>
   </head>
   <body>
     <!-- Sidebar Navigation -->
@@ -31,14 +31,26 @@
 
       <!-- Google Map Container -->
       <div id="map"></div>
+
+      <!-- View Gallery Button -->
+      <button id="view-gallery">View Gallery</button>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="hidden">
+        <span id="gallery-close">&times;</span>
+        <img id="gallery-modal-img" src="" alt="Gallery Image" />
+        <div id="gallery-controls">
+          <button id="gallery-prev" class="gallery-btn">&#10094;</button>
+          <button id="gallery-next" class="gallery-btn">&#10095;</button>
+        </div>
+      </div>
     </div>
 
     <!-- Google Maps API -->
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly&libraries=marker"
-    async
-    defer>
-</script>
-
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly&libraries=marker"
+      async
+      defer
+    ></script>
   </body>
 </html>

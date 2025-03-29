@@ -113,34 +113,33 @@ function initMap() {
       ],
     },
     {
-      name: "Kapok Tree, Pajni Maram",
-      lat: 12.017323,
-      lng: 79.853045,
-      description: "Tall and fast-growing species.",
-    },
-    {
       name: "African Tulip Tree",
       lat: 12.017323,
       lng: 79.853045,
-      description: "Bright orange flowers.", //works
+      description: "Bright orange flowers.",
+      images: ["Plants/African.jpg"], //works
     },
     {
       name: "Indian Butter Tree",
-      lat: 12.017324,
-      lng: 79.852544,
+      lat: 12.01731,
+      lng: 79.85265,
       description: "Oil-producing tree.", //works
+      images: ["Plants/ButterTree.jpg"],
     },
     {
       name: "Mango Tree",
       lat: 12.0161,
       lng: 79.853523,
-      description: "Produces delicious mangoes.", //works
+      description: "Produces delicious mangoes.",
+      images: ["Plants/MangoTree.jpg"],
+      //works
     },
     {
       name: "Cherry Tree",
       lat: 12.016149,
       lng: 79.85415,
-      description: "Beautiful flowering tree.", //works
+      description: "Beautiful flowering tree.",
+      images: ["Plants/cherryplant.jpg"], //works
     },
     {
       name: "Gliricidia sepium",
@@ -150,11 +149,53 @@ function initMap() {
       images: ["Plants/Gliricidia sepium.jpg"], //works
     },
     {
-      name: "Ficus Benghalensis",
-      lat: 12.01576,
-      lng: 79.853781,
+      name: "Ficus benghalensis",
+      lat: 12.01636,
+      lng: 79.85378,
       description: "Banyan Tree",
-      images: ["Plants/Banyan.jpg"], //works
+      images: ["Plants/banyan tree.jpg"], //works
+    },
+    {
+      name: "Streculia feotida",
+      lat: 12.015963,
+      lng: 79.854473,
+      description: "Wild Indian Almond",
+      images: ["Plants/WildIndianAlmond.jpg"], //works
+    },
+    {
+      name: "Ceiba pentandra",
+      lat: 12.017323,
+      lng: 79.853045,
+      description: "Kapok Tree / Silk Cotton Tree",
+      images: ["Plants/KapokTree.jpg"], //works
+    },
+    {
+      name: "Ficus virens",
+      lat: 12.0166,
+      lng: 79.85318,
+      description: "Pilkhan Tree",
+      images: ["Plants/PilkanTree.jpg"], //works
+    },
+    {
+      name: "Azadirachta indica",
+      lat: 12.015922,
+      lng: 79.853212,
+      description: "Neem Tree",
+      images: ["Plants/neemtree.jpg"], //works
+    },
+    {
+      name: "Tectona grandis",
+      lat: 12.015774,
+      lng: 79.854724,
+      description: "Teak",
+      images: ["Plants/Teak.jpg"], //works
+    },
+    {
+      name: "Delonix regia",
+      lat: 12.016723,
+      lng: 79.85354,
+      description: "Flame Tree",
+      images: ["Plants/Flametree.jpg"], //works
     },
   ];
   // if possible can you send the photos of the plants y'all took to me along with the plant names?
@@ -197,37 +238,61 @@ function initMap() {
 }
 
 // Function to generate InfoWindow content (with image gallery). Some landscape images are being weirdly stretched out. need to look into this.
-// The images are being stretched out because the width and height of the image are not set.
-function generateInfoWindowContent(plant) {
-  let isSpecialPlant =
-    plant.name === "Gliricidia sepium" || plant.name === "Neem Tree";
+// Open Gallery Modal
+// Open Gallery Modal
+function openGallery(images) {
+  let modal = document.getElementById("gallery-modal");
+  let modalImg = document.getElementById("gallery-modal-img");
+  let currentIndex = 0;
 
-  let gallery = "";
+  if (!images || images.length === 0) {
+    alert("No images available.");
+    return;
+  }
+
+  modal.style.display = "flex";
+  modalImg.src = images[currentIndex];
+
+  document.getElementById("gallery-next").onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex];
+  };
+
+  document.getElementById("gallery-prev").onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex];
+  };
+
+  document.getElementById("gallery-close").onclick = () => {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
+// Generate Info Window Content
+function generateInfoWindowContent(plant) {
+  let galleryPreview = "";
   if (plant.images && plant.images.length > 0) {
-    gallery = `
-      <div class="info-window-gallery ${
-        isSpecialPlant ? "expanded-gallery" : ""
-      }" 
-           style="display: flex; flex-direction: column; overflow-y: auto; max-height: 150px; gap: 5px; padding-top: 5px;">
-        ${plant.images
-          .map(
-            (img) =>
-              `<img src="${img}" alt="${plant.name}" class="gallery-img" onclick="expandGallery(this)">`
-          )
-          .join("")}
+    galleryPreview = `
+      <div class="info-gallery">
+        <img src="${plant.images[0]}" alt="${
+      plant.name
+    }" class="info-thumbnail">
+        <button class="view-gallery-btn" onclick='openGallery(${JSON.stringify(
+          plant.images
+        )})'>View Gallery</button>
       </div>`;
   }
 
-  return `<div style="max-width: 200px; text-align: center;">
+  return `<div class="info-window-content">
       <b>${plant.name}</b><br>${plant.description}<br>
-      ${gallery}
+      ${galleryPreview}
     </div>`;
-}
-function expandGallery(img) {
-  let overlay = document.createElement("div");
-  overlay.className = "fullscreen";
-  overlay.innerHTML = `<img src="${img.src}" onclick="document.body.removeChild(this.parentNode)">`;
-  document.body.appendChild(overlay);
 }
 
 window.initMap = initMap;
