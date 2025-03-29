@@ -149,6 +149,13 @@ function initMap() {
       description: "Madre de cacao",
       images: ["Plants/Gliricidia sepium.jpg"], //works
     },
+    {
+      name: "Ficus Benghalensis",
+      lat: 12.01576,
+      lng: 79.853781,
+      description: "Banyan Tree",
+      images: ["Plants/Banyan.jpg"], //works
+    },
   ];
   // if possible can you send the photos of the plants y'all took to me along with the plant names?
   // i tried adding google drive links instead of using a separate folder but apparently google drive links are not allowed.
@@ -192,23 +199,35 @@ function initMap() {
 // Function to generate InfoWindow content (with image gallery). Some landscape images are being weirdly stretched out. need to look into this.
 // The images are being stretched out because the width and height of the image are not set.
 function generateInfoWindowContent(plant) {
+  let isSpecialPlant =
+    plant.name === "Gliricidia sepium" || plant.name === "Neem Tree";
+
   let gallery = "";
   if (plant.images && plant.images.length > 0) {
-    gallery =
-      `<div class="info-window-gallery" style="display: flex; gap: 5px; margin-top: 5px;">` +
-      plant.images
-        .map(
-          (img) =>
-            `<img src="${img}" alt="${plant.name}" style="width: 80px; height: auto; border-radius: 5px;">`
-        )
-        .join("") +
-      `</div>`;
+    gallery = `
+      <div class="info-window-gallery ${
+        isSpecialPlant ? "expanded-gallery" : ""
+      }" 
+           style="display: flex; flex-direction: column; overflow-y: auto; max-height: 150px; gap: 5px; padding-top: 5px;">
+        ${plant.images
+          .map(
+            (img) =>
+              `<img src="${img}" alt="${plant.name}" class="gallery-img" onclick="expandGallery(this)">`
+          )
+          .join("")}
+      </div>`;
   }
 
-  return `<div style="max-width: 200px;">
+  return `<div style="max-width: 200px; text-align: center;">
       <b>${plant.name}</b><br>${plant.description}<br>
       ${gallery}
     </div>`;
+}
+function expandGallery(img) {
+  let overlay = document.createElement("div");
+  overlay.className = "fullscreen";
+  overlay.innerHTML = `<img src="${img.src}" onclick="document.body.removeChild(this.parentNode)">`;
+  document.body.appendChild(overlay);
 }
 
 window.initMap = initMap;
