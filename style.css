@@ -78,3 +78,17 @@ header {
     width: 30%;
   }
 }
+/* Info Window Image Gallery */
+.info-window-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 5px;
+  padding-top: 5px;
+}
+
+.info-window-gallery img {
+  width: 120px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
