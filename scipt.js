@@ -14,7 +14,7 @@ function initMap() {
     center: PONDICHERRY_CENTER,
     restriction: {
       latLngBounds: PONDICHERRY_UNIVERSITY_BOUNDS,
-      //strictBounds: true,
+      strictBounds: true,
     },
     zoom: 16,
     mapTypeId: "satellite",
