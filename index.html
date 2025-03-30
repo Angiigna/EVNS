@@ -187,6 +187,79 @@
           </div>
         </div>
       </section>
+      <!-- Fauna Facts Section -->
+      <section id="fauna-facts-section">
+        <h2>Fauna of Pondicherry University: Dog Hotspots</h2>
+        <p>
+          Many dogs reside across the university campus, often forming social
+          groups and territories. Here are some observed dog populations in
+          different hostel areas:
+        </p>
+
+        <div class="fauna-container">
+          <!-- Girls Hostel Section -->
+          <div class="fauna-hostel">
+            <h3>Girls' Hostel Areas</h3>
+            <ul>
+              <li><b>Girls Mess:</b> 8 dogs, 3 puppies</li>
+              <li><b>Kannagi:</b> 5 dogs, 2 puppies</li>
+              <li><b>Madam Curie:</b> 4 dogs</li>
+              <li><b>Ganga:</b> 3 dogs</li>
+              <li><b>Yamuna:</b> 3 dogs</li>
+              <li><b>Saraswati:</b> 4 dogs</li>
+              <li><b>Kaveri:</b> 6 dogs, 2 puppies</li>
+            </ul>
+          </div>
+
+          <!-- Boys Hostel Section -->
+          <div class="fauna-hostel">
+            <h3>Boys' Hostel Areas</h3>
+            <ul>
+              <li><b>Kannadasan Hostel:</b> 3 dogs</li>
+              <li><b>Thiruvallur Stadium:</b> 5 dogs</li>
+              <li><b>MAKA Hostel:</b> 2 dogs</li>
+              <li><b>Kalidas Hostel:</b> 3 dogs</li>
+              <li><b>Valmiki Hostel:</b> 2 dogs</li>
+              <li><b>Kamban Hostel:</b> 3 dogs</li>
+              <li><b>Birsa Munda Hostel:</b> 3 dogs</li>
+              <li><b>Aurobindo Hostel:</b> 4 dogs, 7 puppies</li>
+              <li><b>Subramanian Bharati Hostel:</b> 1 dog</li>
+              <li><b>Pavendar Bharathidasan:</b> 1 dog</li>
+              <li><b>CV Raman Hostel:</b> 2 dogs</li>
+              <li><b>Illango Hostel:</b> 2 dogs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Dog Behavior Facts -->
+        <div class="fauna-facts">
+          <h3>Common Dog Behavior Observations</h3>
+          <p>
+            <b>Territorial Instincts:</b> Dogs tend to establish territories
+            around hostels and cafeterias, where they feel safe and can access
+            food easily.
+          </p>
+          <p>
+            <b>Routine Activities:</b> Most dogs follow a predictable
+            routine—roaming in groups, resting in shaded areas, and scavenging
+            for food at specific times.
+          </p>
+          <p>
+            <b>Social Groups:</b> Dogs often form packs based on familiarity and
+            hierarchy. Conflicts between groups usually occur over food or
+            territory.
+          </p>
+          <p>
+            <b>Friendly vs. Cautious Behavior:</b> While some dogs are friendly
+            towards students, others remain cautious, especially at night or
+            when unfamiliar people approach.
+          </p>
+          <p>
+            <b>Mother Dogs & Puppies:</b> Female dogs with puppies are highly
+            protective and prefer to stay in quiet, less-disturbed areas.
+          </p>
+        </div>
+      </section>
     </div>
 
     <!-- Google Maps API -->
@@ -198,38 +271,58 @@
 
     <script>
       let currentScript = "scipt.js"; // Default Flora Map
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("fauna-facts-section").classList.add("hidden");
+      });
 
       function switchMap(newScript, initFunction) {
-        if (currentScript === newScript) return; // Prevent unnecessary reload
+        console.log(`Switching to: ${newScript}`);
+        console.log(`Calling function: ${initFunction}`);
 
-        // Remove existing script
+        if (currentScript === newScript) return;
+
         let oldScript = document.querySelector(
           `script[src="${currentScript}"]`
         );
-        if (oldScript) oldScript.remove();
+        if (oldScript) {
+          console.log(`Removing old script: ${currentScript}`);
+          oldScript.remove();
+        }
 
-        // Load new script
         let scriptElement = document.createElement("script");
         scriptElement.src = newScript;
         scriptElement.defer = true;
         scriptElement.onload = () => {
-          // Call the corresponding initialization function once the script loads
+          console.log(`Loaded script: ${newScript}`);
+
           if (typeof window[initFunction] === "function") {
+            console.log(`Calling init function: ${initFunction}`);
             window[initFunction]();
+          } else {
+            console.error(`Error: ${initFunction} is not defined!`);
           }
 
-          // Toggle facts based on the selected map
+          // Ensure the correct facts section is shown
+          let floraFacts = document.getElementById("flora-facts-section");
+          let faunaFacts = document.getElementById("fauna-facts-section");
+
           if (newScript === "scipt.js") {
-            document.getElementById("flora-facts").classList.remove("hidden");
-            document.getElementById("fauna-facts").classList.add("hidden");
+            console.log("Showing Flora Facts, Hiding Fauna Facts");
+            floraFacts.classList.remove("hidden");
+            faunaFacts.classList.add("hidden");
           } else if (newScript === "fauna.js") {
-            document.getElementById("flora-facts").classList.add("hidden");
-            document.getElementById("fauna-facts").classList.remove("hidden");
+            console.log("Showing Fauna Facts, Hiding Flora Facts");
+            faunaFacts.classList.remove("hidden");
+            floraFacts.classList.add("hidden");
+            console.log("Flora Facts Classes:", floraFacts.classList.value);
+            console.log("Fauna Facts Classes:", faunaFacts.classList.value);
+          } else {
+            console.error("Unknown script, no facts section updated.");
           }
         };
-        document.body.appendChild(scriptElement);
 
-        currentScript = newScript; // Update current script reference
+        document.body.appendChild(scriptElement);
+        currentScript = newScript;
       }
 
       document

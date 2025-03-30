@@ -1,4 +1,4 @@
-let map;
+//let map;
 let activeInfoWindow = null; // Track the currently open info window
 
 const PONDICHERRY_UNIVERSITY_BOUNDS = {

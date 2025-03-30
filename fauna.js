@@ -55,6 +55,41 @@ function initializeFaunaMap() {
         "Dogs/Girls/kannagi1.jpg",
         "Dogs/Girls/kannagi2.jpg",
         "Dogs/Girls/kannagi3.jpg",
+        "Dogs/Girls/kannagi4.jpg",
+      ],
+    },
+    {
+      name: "Ponlait",
+      lat: 12.01781,
+      lng: 79.85365,
+      images: ["Dogs/campus/ponlait.jpg"],
+    },
+    {
+      name: "Lecture Hall Complex",
+      lat: 12.01653,
+      lng: 79.85486,
+      images: ["Dogs/campus/lhc1.jpg", "Dogs/campus/lhc.jpg"],
+    },
+    {
+      name: "Administration Block",
+      lat: 12.02201,
+      lng: 79.85728,
+      images: ["Dogs/campus/admin.jpg"],
+    },
+    {
+      name: "Mother Teresa Mess",
+      lat: 12.02223,
+      lng: 79.84805,
+      images: ["Dogs/campus/mess1.jpg", "Dogs/campus/mess.jpg"],
+    },
+    {
+      name: "Girl's Tea Time",
+      lat: 12.02314,
+      lng: 79.84702,
+      images: [
+        "Dogs/campus/girlstea.jpg",
+        "Dogs/campus/girlstea1.jpg",
+        "Dogs/campus/girlstea2.jpg",
       ],
     },
   ];
@@ -161,12 +196,16 @@ function addHeatmapLayer(map) {
       location: new google.maps.LatLng(12.02432, 79.84603), // Kannagi Hostel
       weight: 8,
     },
+    {
+      location: new google.maps.LatLng(12.01781, 79.85365), // Ponlait
+      weight: 8,
+    },
   ];
 
   const heatmap = new google.maps.visualization.HeatmapLayer({
     data: heatmapData,
     map: map,
-    radius: 100, // Small localized area
+    radius: 500, // Small localized area
     opacity: 0.7, // Slight transparency
     gradient: [
       "rgba(0, 255, 0, 0)",
