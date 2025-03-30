@@ -209,7 +209,8 @@ function initMap() {
       map: map,
       title: plant.name,
       icon: {
-        url: "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
+        url: "Plants/marker.png", // Path to your custom marker icon
+        scaledSize: new google.maps.Size(30, 30), // Adjust size if needed
       },
     });
 
