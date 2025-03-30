@@ -7,7 +7,7 @@ const PONDICHERRY_UNIVERSITY_BOUNDS = {
   east: 79.8615224,
   west: 79.8432404,
 };
-const PONDICHERRY_CENTER = { lat: 12.0273, lng: 79.852 };
+const PONDICHERRY_CENTER = { lat: 12.01676, lng: 79.85325 };
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {

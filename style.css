@@ -1,91 +1,127 @@
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-body {
-  display: flex;
-  height: 100vh;
-  overflow: hidden; /* Prevent unwanted scrolling */
-}
-
-/* Sidebar Navigation */
+/* Sidebar */
 .sidebar {
-  width: 250px;
-  background: #2e7d32; /* Dark Green */
+  width: 230px;
+  height: 100vh;
+  position: fixed;
+  background: #2c5046;
   color: white;
-  padding: 20px;
-  overflow-y: auto;
+  padding-top: 20px;
 }
 
 .sidebar h2 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .sidebar ul {
   list-style: none;
+  padding: 0;
 }
 
 .sidebar ul li {
   padding: 10px;
-  margin: 10px 0;
-  background: #388e3c; /* Lighter Green */
   text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.sidebar ul li:hover {
-  background: #43a047; /* Slightly lighter green on hover */
 }
 
 .sidebar ul li a {
   color: white;
   text-decoration: none;
   display: block;
+  font-size: 18px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #34495e;
 }
 
 /* Main Content */
 .main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-header {
-  background: #66bb6a; /* Light Green */
+  margin-left: 240px;
   padding: 20px;
+}
+
+/* Header */
+header {
   text-align: center;
-  color: white;
+  background: rgb(160, 219, 132);
+  padding: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-/* Google Map Styling */
+/* Google Map */
 #map {
-  flex: 1;
-  height: 100%;
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    text-align: center;
-  }
-
-  .sidebar ul li {
-    display: inline-block;
-    width: 30%;
-  }
+/* Flora Facts Section */
+#flora-facts-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Flora Grid Container */
+.flora-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive Grid */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Individual Flora Box */
+.flora-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.flora-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.flora-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Heading and Text */
+.flora-item h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+
+.flora-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
 /* Info Window Gallery Preview */
 .info-gallery {
   display: flex;
@@ -99,19 +135,6 @@ header {
   object-fit: cover;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.view-gallery-btn {
-  background: #006400;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.view-gallery-btn:hover {
-  background: #004d00;
 }
 
 /* Modal Gallery */
@@ -144,7 +167,7 @@ header {
 }
 
 .gallery-btn {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(88, 251, 6, 0.7);
   border: none;
   padding: 10px 15px;
   font-size: 24px;
@@ -158,4 +181,22 @@ header {
   font-size: 30px;
   color: white;
   cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .flora-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pondicherry University Green Mapping</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="scipt.js"></script>
+    <script src="scipt.js" defer></script>
+    <!-- Default Flora Map -->
   </head>
   <body>
     <!-- Sidebar Navigation -->
     <div class="sidebar">
       <h2>Green Mapping</h2>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Fauna</a></li>
+        <li><a href="#" id="flora-btn">Flora</a></li>
+        <li><a href="#" id="fauna-btn">Fauna</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -29,10 +30,8 @@
         </p>
       </header>
 
-      <!-- Google Map Container -->
+      <!-- Google Map Container (FULL SIZE) -->
       <div id="map"></div>
-
-      <!-- View Gallery Button -->
 
       <!-- Gallery Modal -->
       <div id="gallery-modal" class="hidden">
@@ -43,13 +42,207 @@
           <button id="gallery-next" class="gallery-btn">&#10095;</button>
         </div>
       </div>
+
+      <!-- Facts Section (User Scrolls Down to See) -->
+      <!-- Facts Section (User Scrolls Down to See) -->
+      <!-- Flora Facts Section -->
+      <section id="flora-facts-section">
+        <h2>Flora of Pondicherry University: A Green Haven</h2>
+        <p>
+          Pondicherry University boasts a rich and diverse range of plant
+          species, contributing to its green and serene environment. These
+          plants not only enhance the beauty of the campus but also serve
+          ecological and medicinal purposes. Below are some notable trees and
+          plants found within the university grounds:
+        </p>
+
+        <div class="flora-container">
+          <div class="flora-item">
+            <img
+              src="Plants/Red frangipani, Plumeria rubra.jpg"
+              alt="Red Frangipani"
+            />
+            <h3>Red Frangipani (*Plumeria rubra*)</h3>
+            <p><b>Origin:</b> Mexico, Central America</p>
+            <p><b>Location:</b> Opposite to Boy's Tea Time</p>
+            <p>
+              Known for its vibrant red flowers, this tropical beauty is often
+              used in traditional rituals and as an ornamental plant.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/Bamboo/Bamboo 1.jpg" alt="Bamboo" />
+            <h3>Bamboo</h3>
+            <p><b>Origin:</b> Asia, South America, Africa</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              Bamboo is a fast-growing species that plays a crucial role in
+              preventing soil erosion and providing habitat for various
+              wildlife.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Sausage Tree, Kigelia Africana/1.jpg"
+              alt="Sausage Tree"
+            />
+            <h3>Sausage Tree (*Kigelia africana*)</h3>
+            <p><b>Origin:</b> Tropical Africa</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              Named after its unique sausage-shaped fruits, this tree is valued
+              for its medicinal properties, particularly for skin treatments.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Touch me not, Mimosa Pudica/2.jpg"
+              alt="Touch-Me-Not"
+            />
+            <h3>Touch-Me-Not (*Mimosa pudica*)</h3>
+            <p><b>Origin:</b> South and Central America</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              A fascinating plant that reacts to touch by folding its leaves. It
+              is widely used in Ayurveda for its anti-inflammatory properties.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Peltophorum pterocarpum, Copper Pod/1.jpg"
+              alt="Copper Pod"
+            />
+            <h3>Copper Pod (*Peltophorum pterocarpum*)</h3>
+            <p><b>Origin:</b> South and Southeast Asia</p>
+            <p><b>Coordinates:</b> 12.030633, 79.858880</p>
+            <p>
+              This tree is recognized for its golden-yellow flowers and is often
+              planted along roadsides as an ornamental shade tree.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/African.jpg" alt="African Tulip Tree" />
+            <h3>African Tulip Tree (*Spathodea campanulata*)</h3>
+            <p><b>Origin:</b> West Africa</p>
+            <p><b>Coordinates:</b> 12.031510, 79.860296</p>
+            <p>
+              An exotic tree with striking red-orange flowers that attract birds
+              and pollinators.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Empress tree, Paulownia tomentosa.jpg"
+              alt="Empress Tree"
+            />
+            <h3>Empress Tree (*Paulownia tomentosa*)</h3>
+            <p><b>Origin:</b> China</p>
+            <p><b>Coordinates:</b> 12.033173, 79.859959</p>
+            <p>
+              A fast-growing tree known for its large, heart-shaped leaves and
+              violet flowers, widely cultivated for timber.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Neem Tree, Azadirachta Indica/unnamed.jpg"
+              alt="Neem Tree"
+            />
+            <h3>Neem Tree (*Azadirachta indica*)</h3>
+            <p><b>Origin:</b> Indian Subcontinent</p>
+            <p><b>Coordinates:</b> 12.034057, 79.857298</p>
+            <p>
+              A sacred tree known for its antibacterial and antifungal
+              properties, used in traditional medicine and organic farming.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/MangoTree.jpg" alt="Mango Tree" />
+            <h3>Mango Tree (*Mangifera indica*)</h3>
+            <p><b>Origin:</b> South Asia</p>
+            <p><b>Coordinates:</b> 12.016100, 79.853523</p>
+            <p>
+              One of India's most beloved fruit trees, known for its delicious
+              mangoes and lush green foliage.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/KapokTree.jpg" alt="Kapok Tree" />
+            <h3>Kapok Tree (*Ceiba pentandra*)</h3>
+            <p><b>Origin:</b> Central and South America</p>
+            <p><b>Coordinates:</b> 12.017323, 79.853045</p>
+            <p>
+              A towering tree known for its silky fibers used in stuffing
+              pillows and mattresses.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- Google Maps API -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly&libraries=marker"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly&libraries=visualization"
       async
       defer
     ></script>
+
+    <script>
+      let currentScript = "scipt.js"; // Default Flora Map
+
+      function switchMap(newScript, initFunction) {
+        if (currentScript === newScript) return; // Prevent unnecessary reload
+
+        // Remove existing script
+        let oldScript = document.querySelector(
+          `script[src="${currentScript}"]`
+        );
+        if (oldScript) oldScript.remove();
+
+        // Load new script
+        let scriptElement = document.createElement("script");
+        scriptElement.src = newScript;
+        scriptElement.defer = true;
+        scriptElement.onload = () => {
+          // Call the corresponding initialization function once the script loads
+          if (typeof window[initFunction] === "function") {
+            window[initFunction]();
+          }
+
+          // Toggle facts based on the selected map
+          if (newScript === "scipt.js") {
+            document.getElementById("flora-facts").classList.remove("hidden");
+            document.getElementById("fauna-facts").classList.add("hidden");
+          } else if (newScript === "fauna.js") {
+            document.getElementById("flora-facts").classList.add("hidden");
+            document.getElementById("fauna-facts").classList.remove("hidden");
+          }
+        };
+        document.body.appendChild(scriptElement);
+
+        currentScript = newScript; // Update current script reference
+      }
+
+      document
+        .getElementById("flora-btn")
+        .addEventListener("click", function () {
+          switchMap("scipt.js", "initMap");
+        });
+
+      document
+        .getElementById("fauna-btn")
+        .addEventListener("click", function () {
+          switchMap("fauna.js", "initializeFaunaMap");
+        });
+    </script>
   </body>
 </html>
