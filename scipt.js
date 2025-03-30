@@ -197,7 +197,107 @@ function initMap() {
       description: "Flame Tree",
       images: ["Plants/Flametree.jpg"], //works
     },
-  ];
+    {
+      name: "Syzygium cumini",
+      lat: 12.020798,
+      lng: 79.855852,
+      description: "Jamun tree/Indian blackberry tree",
+      images: [
+        "Plants/jamuntree/jamuntree.jpg",
+        "Plants/jamuntree/jamunleaf.jpg",
+      ], //works
+    },
+    {
+      name: "Cochlospermum gossypium",
+      lat: 12.021068,
+      lng: 79.855660,
+      description: "Yellow Silk Cotton Tree",
+      images: [
+        "Plants/Yelowsilkcotton/yellowsilkcotton.jpg",
+        "Plants/Yelowsilkcotton/yellowsilkcottonleaf.jpg",
+      ], //works
+    },
+    {
+      name: "Tabebuia rosea tree",
+      lat: 12.021618,
+      lng: 79.855919,
+      description: "Pink Trumpet Tree or Rosy Trumpet Tree",
+      images: [
+        "Plants/pinktrumpet/pinktrumpettree.jpg",
+        "Plants/pinktrumpet/pinktrumpetflower.jpg",
+      ], //works
+    },
+    {
+      name: "Dypsis lutescens",
+      lat: 12.02105,
+      lng: 79.85515,
+      description: "Areca Palm",
+      images: [
+        "Plants/arecapalm.jpg",
+      ], // works need to get one more pic of this plant, i thought i had a pic but its missing
+    },
+    {
+      name: "Enterobium cyclocarpum",
+      lat: 12.021086, 
+      lng: 79.854311,
+      description: "Earpod Tree",
+      images: [
+        "Plants/earpodtree/Earpodtree.jpg",
+        "Plants/earpodtree/earpodtreesign.jpg",
+      ], //works
+    },
+    {
+      name: "Clusia rosea",
+      lat: 12.021604,
+      lng: 79.853932,
+      description: "autograph tree or pitch apple",
+      images: [
+        "Plants/autographtree.jpg"
+      ], //works
+    },
+    {
+      name: "Tamarindus indica",
+      lat: 12.02526, 
+      lng: 79.85082,
+      description: "Tamarind tree",
+      images: [
+        "Plants/tamrind/tamrind.jpg",
+        "Plants/tamrind/amrindcloseup.jpg"
+      ], //works
+    },
+    {
+      name: "Ficus religiosa",
+      lat: 12.02192,  
+      lng: 79.85295,
+      description: "Peepal Tree",
+      images: [
+        "Plants/peepal/peepaltree.jpg",
+        "Plants/peepal/templepeepal.jpg",
+        "Plants/peepal/peepalleaf.jpg",
+      ], //works
+    },
+    {
+      name: "Brugmansia suaveolens",
+      lat: 12.021372, 
+      lng: 79.853283,
+      description: "White Trumpet vine",
+      images: [
+        "Plants/trumpetvine/white trumpet vine.jpg",
+        "Plants/trumpetvine/trumpetvineflower.jpg",
+      ], //works
+    },
+    {
+      name: "Bougainvillea",
+      lat: 12.02289,  
+      lng: 79.85247,
+      description: "paperflower",
+      images: [
+        "Plants/bougenvillea/bougenvillea.jpg",
+        "Plants/bougenvillea/bougenvilleaflowers.jpg",
+        "Plants/bougenvillea/paperflower.jpg",
+      ], //works
+    },
+  ];// if anyone has good pics pls add them to the plant file and link them o the respctive tree or send the pics.
   // if possible can you send the photos of the plants y'all took to me along with the plant names?
   // i tried adding google drive links instead of using a separate folder but apparently google drive links are not allowed.
   // so i made a folder with the images and added the links to the images in the code. not sure if it would slow down the loading time of the map or not.
