@@ -31,13 +31,13 @@ function initMap() {
     },*/
     {
       name: "Sausage Tree, Kigelia Africana",
-      lat: 12.030723,
-      lng: 79.858859,
+      lat: 12.03063,
+      lng: 79.85733,
       description: "Tagged plants: 19871, 19873, 19872, 19866",
       images: [
         "Plants/Sausage Tree, Kigelia Africana/1.jpg",
         "Plants/Sausage Tree, Kigelia Africana/unnamed.jpg",
-      ],
+      ],//works 1
     },
     {
       name: "Touch Me Not, Mimosa Pudica",
@@ -46,7 +46,7 @@ function initMap() {
       description: "Sensitive plant known for its leaf movements.",
       images: [
         "Plants/Touch Me Not, Mimosa Pudica/1.jpg",
-        "Plants/Touch Me Not, Mimosa Pudica/2.jpg", //works
+        "Plants/Touch Me Not, Mimosa Pudica/2.jpg", //works 2
       ],
     },
     {
@@ -56,7 +56,7 @@ function initMap() {
       description: "Number of trees: 2",
       images: [
         "Plants/CopperLeaf, Red Amaranth, Acalypha/1.jpg",
-        "Plants/CopperLeaf, Red Amaranth, Acalypha/unnamed.jpg", //works
+        "Plants/CopperLeaf, Red Amaranth, Acalypha/unnamed.jpg", //works 3
       ],
     },
     {
@@ -64,7 +64,7 @@ function initMap() {
       lat: 12.03151,
       lng: 79.860296,
       description: "Tagged plants: 19898, 19959, 19954",
-      images: ["Plants/Spathodea campanulata.jpg"], //works
+      images: ["Plants/Spathodea campanulata.jpg"], //works 4
     },
     {
       name: "Parkia Biglandulosa",
@@ -83,7 +83,7 @@ function initMap() {
       lat: 12.033173,
       lng: 79.859959,
       description: "Tag: 19896",
-      images: ["Plants/Empress Tree, Paulownia tomentosa.jpg"], //works
+      images: ["Plants/Empress Tree, Paulownia tomentosa.jpg"], //works 5
     },
     {
       name: "Neem Tree, Azadirachta Indica",
@@ -92,7 +92,7 @@ function initMap() {
       description: "Number of trees: 2",
       images: [
         "Plants/Neem Tree, Azadirachta Indica/1.jpg",
-        "Plants/Neem Tree, Azadirachta Indica/unnamed.jpg", //works
+        "Plants/Neem Tree, Azadirachta Indica/unnamed.jpg", //works 6
       ],
     },
     {
@@ -117,13 +117,13 @@ function initMap() {
       lat: 12.017323,
       lng: 79.853045,
       description: "Bright orange flowers.",
-      images: ["Plants/African.jpg"], //works
+      images: ["Plants/African.jpg"], //works 7
     },
     {
       name: "Indian Butter Tree",
       lat: 12.01731,
       lng: 79.85265,
-      description: "Oil-producing tree.", //works
+      description: "Oil-producing tree.", //works 8
       images: ["Plants/ButterTree.jpg"],
     },
     {
@@ -132,70 +132,70 @@ function initMap() {
       lng: 79.853523,
       description: "Produces delicious mangoes.",
       images: ["Plants/MangoTree.jpg"],
-      //works
+      //works 9
     },
     {
       name: "Cherry Tree",
       lat: 12.016149,
       lng: 79.85415,
       description: "Beautiful flowering tree.",
-      images: ["Plants/cherryplant.jpg"], //works
+      images: ["Plants/cherryplant.jpg"], //works 10
     },
     {
       name: "Gliricidia sepium",
       lat: 12.03406,
       lng: 79.856588,
       description: "Madre de cacao",
-      images: ["Plants/Gliricidia sepium.jpg"], //works
+      images: ["Plants/Gliricidia sepium.jpg"], //works 11
     },
     {
       name: "Ficus benghalensis",
       lat: 12.01636,
       lng: 79.85378,
       description: "Banyan Tree",
-      images: ["Plants/banyan tree.jpg"], //works
+      images: ["Plants/banyan tree.jpg"], //works 12
     },
     {
       name: "Streculia feotida",
       lat: 12.015963,
       lng: 79.854473,
       description: "Wild Indian Almond",
-      images: ["Plants/WildIndianAlmond.jpg"], //works
+      images: ["Plants/WildIndianAlmond.jpg"], //works 13
     },
     {
       name: "Ceiba pentandra",
       lat: 12.017323,
       lng: 79.853045,
       description: "Kapok Tree / Silk Cotton Tree",
-      images: ["Plants/KapokTree.jpg"], //works
+      images: ["Plants/KapokTree.jpg"], //works 14
     },
     {
       name: "Ficus virens",
       lat: 12.0166,
       lng: 79.85318,
       description: "Pilkhan Tree",
-      images: ["Plants/PilkanTree.jpg"], //works
+      images: ["Plants/PilkanTree.jpg"], //works 15
     },
     {
       name: "Azadirachta indica",
       lat: 12.015922,
       lng: 79.853212,
       description: "Neem Tree",
-      images: ["Plants/neemtree.jpg"], //works
+      images: ["Plants/neemtree.jpg"], //works 16
     },
     {
       name: "Tectona grandis",
       lat: 12.015774,
       lng: 79.854724,
       description: "Teak",
-      images: ["Plants/Teak.jpg"], //works
+      images: ["Plants/Teak.jpg"], //works 17
     },
     {
       name: "Delonix regia",
       lat: 12.016723,
       lng: 79.85354,
       description: "Flame Tree",
-      images: ["Plants/Flametree.jpg"], //works
+      images: ["Plants/Flametree.jpg"], //works 18
     },
     {
       name: "Syzygium cumini",
@@ -205,7 +205,7 @@ function initMap() {
       images: [
         "Plants/jamuntree/jamuntree.jpg",
         "Plants/jamuntree/jamunleaf.jpg",
-      ], //works
+      ], //works 19
     },
     {
       name: "Cochlospermum gossypium",
@@ -215,7 +215,7 @@ function initMap() {
       images: [
         "Plants/Yelowsilkcotton/yellowsilkcotton.jpg",
         "Plants/Yelowsilkcotton/yellowsilkcottonleaf.jpg",
-      ], //works
+      ], //works 20
     },
     {
       name: "Tabebuia rosea tree",
@@ -225,7 +225,7 @@ function initMap() {
       images: [
         "Plants/pinktrumpet/pinktrumpettree.jpg",
         "Plants/pinktrumpet/pinktrumpetflower.jpg",
-      ], //works
+      ], //works 21
     },
     {
       name: "Dypsis lutescens",
@@ -234,7 +234,7 @@ function initMap() {
       description: "Areca Palm",
       images: [
         "Plants/arecapalm.jpg",
-      ], // works need to get one more pic of this plant, i thought i had a pic but its missing
+      ], // works need to get one more pic of this plant, i thought i had a pic but its missing 22
     },
     {
       name: "Enterobium cyclocarpum",
@@ -244,7 +244,7 @@ function initMap() {
       images: [
         "Plants/earpodtree/Earpodtree.jpg",
         "Plants/earpodtree/earpodtreesign.jpg",
-      ], //works
+      ], //works 23
     },
     {
       name: "Clusia rosea",
@@ -253,7 +253,7 @@ function initMap() {
       description: "autograph tree or pitch apple",
       images: [
         "Plants/autographtree.jpg"
-      ], //works
+      ], //works 24
     },
     {
       name: "Tamarindus indica",
@@ -263,7 +263,7 @@ function initMap() {
       images: [
         "Plants/tamrind/tamrind.jpg",
         "Plants/tamrind/amrindcloseup.jpg"
-      ], //works
+      ], //works 25
     },
     {
       name: "Ficus religiosa",
@@ -274,7 +274,7 @@ function initMap() {
         "Plants/peepal/peepaltree.jpg",
         "Plants/peepal/templepeepal.jpg",
         "Plants/peepal/peepalleaf.jpg",
-      ], //works
+      ], //works 26
     },
     {
       name: "Brugmansia suaveolens",
@@ -284,7 +284,7 @@ function initMap() {
       images: [
         "Plants/trumpetvine/white trumpet vine.jpg",
         "Plants/trumpetvine/trumpetvineflower.jpg",
-      ], //works
+      ], //works 27
     },
     {
       name: "Bougainvillea",
@@ -295,8 +295,89 @@ function initMap() {
         "Plants/bougenvillea/bougenvillea.jpg",
         "Plants/bougenvillea/bougenvilleaflowers.jpg",
         "Plants/bougenvillea/paperflower.jpg",
-      ], //works
+      ], //works 28
     },
+    {
+      name: "Bixa orellana",
+      lat: 12.02308,   
+      lng: 79.84727,
+      description: "Annatto tree or Lipstick tree.",
+      images: [
+        "Plants/lipsticktree.jpg",
+      ], //works 29
+    },
+    {
+      name: "Bixa orellana",
+      lat: 12.02308,   
+      lng: 79.84727,
+      description: "Annatto tree or Lipstick tree.",
+      images: [
+        "Plants/lipsticktree.jpg",
+      ], //works 29
+    },
+    {
+      name: "Euphorbia lactea",
+      lat: 12.022316,  
+      lng: 79.847822,
+      description: "Dragon Bones or Candelabra Plant",
+      images: [
+        "Plants/dragonbones/candeblara.jpg",
+        "Plants/dragonbones/candeblaraleaf.jpg",
+      ], //works 29
+    },
+    {
+      name: " Manilkara zapota",
+      lat: 12.0214, 
+      lng: 79.8496,
+      description: "Chiku or Sapodilla",
+      images: [
+        "Plants/chickoo/chicootree.jpg",
+        "Plants/chickoo/chickoo.jpg",
+      ], //works 30
+    },
+    {
+      name: "Albizia julibrissin",
+      lat: 12.026192,
+      lng: 79.851797,
+      description: "Mimosa tree",
+      images: [
+        "Plants/mimosa/mimosa.jpg",
+        "Plants/mimosa/mimosa leaf.jpg"
+      ], // works 31
+    },
+    {
+      name: "Leucaena leucocephala",
+      lat: 12.018820, 
+      lng: 79.850851,
+      description: "River tamrind",
+      images: [
+        "Plants/rivertamrind.jpg",
+      ], // works 32
+    },
+    {
+      name: "Wodyetia bifurcata",
+      lat: 12.026920, 
+      lng: 79.852961,
+      description: "foxtail palm",
+      images: [
+        "Plants/foxtailpalm/foxtailpalm.jpg",
+        "Plants/foxtailpalm/foxtailpalmdroop.jpg",
+        "Plants/foxtailpalm/foxtailpalmotherside.jpg",
+        "Plants/foxtailpalm/foxtailpalmseeds.jpg",
+      ], //  works 33
+    },
+    {
+      name: "Rhododendron",
+      lat: 12.027890, 
+      lng: 79.854350,
+      description: "azalea plant",
+      images: [
+        "Plants/azaela/azaelaplant.jpg",
+        "Plants/azaela/azaelatree.jpg",
+        "Plants/azaela/azaelaflower.jpg",
+      ], // works 34
+    },
+
   ];// if anyone has good pics pls add them to the plant file and link them o the respctive tree or send the pics.
   // if possible can you send the photos of the plants y'all took to me along with the plant names?
   // i tried adding google drive links instead of using a separate folder but apparently google drive links are not allowed.
