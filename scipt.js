@@ -113,11 +113,16 @@ function initMap() {
       ],
     },
     {
-      name: "African Tulip Tree",
-      lat: 12.017323,
-      lng: 79.853045,
-      description: "Bright orange flowers.",
-      images: ["Plants/African.jpg"], //works 7
+      name: "Spathodea campanulata ",
+      lat: 12.033025,
+      lng: 79.855487,
+      description: "African Tulip Tree",
+      images: [
+        "Plants/african tulip tree/africantulip.jpg",
+        "Plants/african tulip tree/africantulipsmall.jpg",
+        "Plants/african tulip tree/africantulipleaf.jpg",
+        "Plants/african tulip tree/africantulipflower.jpg",    
+      ], //works 7
     },
     {
       name: "Indian Butter Tree",
@@ -306,15 +311,7 @@ function initMap() {
         "Plants/lipsticktree.jpg",
       ], //works 29
     },
-    {
-      name: "Bixa orellana",
-      lat: 12.02308,   
-      lng: 79.84727,
-      description: "Annatto tree or Lipstick tree.",
-      images: [
-        "Plants/lipsticktree.jpg",
-      ], //works 29
-    },
+  
     {
       name: "Euphorbia lactea",
       lat: 12.022316,  
@@ -323,7 +320,7 @@ function initMap() {
       images: [
         "Plants/dragonbones/candeblara.jpg",
         "Plants/dragonbones/candeblaraleaf.jpg",
-      ], //works 29
+      ], //works 30
     },
     {
       name: " Manilkara zapota",
@@ -333,7 +330,7 @@ function initMap() {
       images: [
         "Plants/chickoo/chicootree.jpg",
         "Plants/chickoo/chickoo.jpg",
-      ], //works 30
+      ], //works 31
     },
     {
       name: "Albizia julibrissin",
@@ -343,7 +340,7 @@ function initMap() {
       images: [
         "Plants/mimosa/mimosa.jpg",
         "Plants/mimosa/mimosa leaf.jpg"
-      ], // works 31
+      ], // works 32
     },
     {
       name: "Leucaena leucocephala",
@@ -352,7 +349,7 @@ function initMap() {
       description: "River tamrind",
       images: [
         "Plants/rivertamrind.jpg",
-      ], // works 32
+      ], // works 33
     },
     {
       name: "Wodyetia bifurcata",
@@ -364,7 +361,7 @@ function initMap() {
         "Plants/foxtailpalm/foxtailpalmdroop.jpg",
         "Plants/foxtailpalm/foxtailpalmotherside.jpg",
         "Plants/foxtailpalm/foxtailpalmseeds.jpg",
-      ], //  works 33
+      ], //  works 34
     },
     {
       name: "Rhododendron",
@@ -375,7 +372,69 @@ function initMap() {
         "Plants/azaela/azaelaplant.jpg",
         "Plants/azaela/azaelatree.jpg",
         "Plants/azaela/azaelaflower.jpg",
-      ], // works 34
+      ], // works 35
+    },
+    {
+      name: "Samanea saman",
+      lat: 12.034022, 
+      lng: 79.856566,
+      description: "Raintree",
+      images: [
+        "Plants/raintree/raintree1.jpg",
+        "Plants/raintree/raintree2.jpg",
+        "Plants/raintree/raintreeflower.jpg",
+      ], // works 36
+    },
+    {
+      name: "Adenanthera pavonina L.",
+      lat: 12.034882, 
+      lng: 79.857618,
+      description: "Coralwood",
+      images: [
+        "Plants/coralwood/coralwoodtree.jpg",
+        "Plants/coralwood/coralwoodpods.jpg",
+      ], // works 37
+    },
+    {
+      name: "Acalypha wilkesiana",
+      lat: 12.034353, 
+      lng: 79.858749,
+      description: "Copper leaf",
+      images: [
+        "Plants/copperleaf/copperleafplant.jpg",
+        "Plants/copperleaf/copperleaf.jpg",
+      ], // works 38
+    },
+    {
+      name: "Parkia biglandulosa",
+      lat: 12.031823,
+      lng: 79.860153,
+      description: "Badminton ball tree",
+      images: [
+        "Plants/badmintonballtree/badmintonballleaf.jpg",
+        "Plants/badmintonballtree/badmintonbaltree.jpg",
+        "Plants/badmintonballtree/badmintonball.jpg",
+      ], // works 39
+    },
+    {
+      name: "Cassia grandis",
+      lat: 12.030765,
+      lng: 79.859748,
+      description: "Pink Shower",
+      images: [
+        "Plants/pinkflower/pinkflower1.jpg",
+        "Plants/pinkflower/pinkflower2.jpg",
+      ], // works 40
+    },
+    {
+      name: "Peltophorum pterocarpum",
+      lat: 12.01844,
+      lng: 79.85074,
+      description: "Yellow flame",
+      images: [
+        "Plants/yellowflame/yellowflame.jpg",
+        "Plants/yellowflame/yellowflameflower.jpg",
+      ], // works 41
     },
 
   ];// if anyone has good pics pls add them to the plant file and link them o the respctive tree or send the pics.
