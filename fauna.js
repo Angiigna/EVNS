@@ -1,221 +1,81 @@
-function initializeFaunaMap() {
-  const bounds = {
-    north: 12.0364005,
-    south: 12.013273,
-    east: 79.8615224,
-    west: 79.8432404,
-  };
+  function initializeFaunaMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 12.018555710925714, lng: 79.85677099293513 }, 
+            zoom: 17,
+           // mapTypeControl: false,
+            //fullscreenControl: false,
+            //streetViewControl: false
+        });
 
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 12.02972, lng: 79.85199 },
-    zoom: 15,
-    restriction: { latLngBounds: bounds, strictBounds: true },
-  });
+        const locations = [
+            [12.022917784146761, 79.8468363524608, "NARMADA HOSTEL", "No. of dogs: 6", "dogMarker.png", 38, 31, "kannagi.jpg"],
+                [12.024334401832427, 79.84595658789404, "KANNAGI HOSTEL", "5 dogs and 2 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
+                [12.022261940087793, 79.84806212197712, "MOTHER THERESA MESS", "8 dogs and 3 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
+                [12.02227303907133, 79.84942976214973, "GANGA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannagi.jpg"],
+[12.022884311796183, 79.84816914861624, "MADAM CURIE  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "kannagi.jpg"],
+[12.022498675635342, 79.84865731065663, "YAMUNA  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannagi.jpg"],
+[12.02150703726073, 79.84973555868204, "SARASWATI  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "saraswati.jpg"],
+[12.020339627597007, 79.85028541152809, "KAVERI  HOSTEL", "6 dogs and 2 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
 
-  const locations = [
-    {
-      name: "Kamban Hostel",
-      lat: 12.02972,
-      lng: 79.85199,
-      images: ["Dogs/Boys/kamban.jpg", "Dogs/Boys/kamban1.jpg"],
-    },
-    {
-      name: "Maka Hostel",
-      lat: 12.02971,
-      lng: 79.84873,
-      images: ["Dogs/Boys/maka.jpg", "Dogs/Boys/maka.jpg"],
-    },
-    {
-      name: "Thiruvallur Stadium",
-      lat: 12.02762223457783,
-      lng: 79.84820856929633,
-      images: [
-        "Dogs/Boys/thiruvalllur3.jpg",
-        "Dogs/Boys/thiruvallur2.jpg",
-        "Dogs/Boys/thiruvallur1.jpg",
-        "Dogs/Boys/thiruvallur.jpg",
-      ],
-    },
-    {
-      name: "Kannadhasan hostel",
-      lat: 12.029389447571857,
-      lng: 79.85027985798224,
-      images: [
-        "Dogs/Boys/Kannadhasan.jpg",
-        "Dogs/Boys/Kannadhasan2.jpg",
-        "Dogs/Boys/kannadhasan3.jpg",
-      ],
-    },
-    {
-      name: "Kannagi hostel",
-      lat: 12.02432,
-      lng: 79.84603,
-      images: [
-        "Dogs/Girls/kannagi.jpg",
-        "Dogs/Girls/kannagi1.jpg",
-        "Dogs/Girls/kannagi2.jpg",
-        "Dogs/Girls/kannagi3.jpg",
-        "Dogs/Girls/kannagi4.jpg",
-      ],
-    },
-    {
-      name: "Ponlait",
-      lat: 12.01781,
-      lng: 79.85365,
-      images: ["Dogs/campus/ponlait.jpg"],
-    },
-    {
-      name: "Lecture Hall Complex",
-      lat: 12.01653,
-      lng: 79.85486,
-      images: ["Dogs/campus/lhc1.jpg", "Dogs/campus/lhc.jpg"],
-    },
-    {
-      name: "Administration Block",
-      lat: 12.02201,
-      lng: 79.85728,
-      images: ["Dogs/campus/admin.jpg"],
-    },
-    {
-      name: "Mother Teresa Mess",
-      lat: 12.02223,
-      lng: 79.84805,
-      images: ["Dogs/campus/mess1.jpg", "Dogs/campus/mess.jpg"],
-    },
-    {
-      name: "Girl's Tea Time",
-      lat: 12.02314,
-      lng: 79.84702,
-      images: [
-        "Dogs/campus/girlstea.jpg",
-        "Dogs/campus/girlstea1.jpg",
-        "Dogs/campus/girlstea2.jpg",
-      ],
-    },
-  ];
+[12.029370766606938, 79.84931225246086, " KANNADASAN HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannadhasan.jpg"],
+[12.027691842933573, 79.84818572466193, "THIRUVALLUR STADIUM", "No. of dogs: 5", "dogMarker.png", 38, 31, "thiruvallur.jpg"],
+[12.029780002663266, 79.84873289530712, "MAKA  HOSTEL", "No. of dogs: 2", "dogMarker.png", 38, 31, "maka.jpg"],
+[12.02986394843738, 79.85198373266854, " KAMBAN  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kamban1.jpg"],
+[12.030216211741985, 79.85338539478852, "BIRSA MUNDA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "birsa.jpg"],
 
-  const pawIcon = {
-    url: "Dogs/dog marker.png",
-    scaledSize: new google.maps.Size(30, 30),
-  };
+[12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "auro7.jpg"]
+    
 
-  locations.forEach((place) => {
-    const marker = new google.maps.Marker({
-      position: { lat: place.lat, lng: place.lng },
-      map,
-      title: place.name,
-      icon: pawIcon,
-    });
 
-    let galleryHtml = `<h3>${place.name}</h3><div style='display:flex;'>`;
-    place.images.forEach((img) => {
-      galleryHtml += `<img src='${img}' style='width:100px; height:100px; margin:5px;'>`;
-    });
-    galleryHtml += "</div>";
+];
 
-    const infoWindow = new google.maps.InfoWindow({
-      content: generateInfoWindowContent(place),
-    });
+        let heatmapData = [];
 
-    marker.addListener("click", () => {
-      // Close the currently open info window
-      if (activeInfoWindow) {
-        activeInfoWindow.close();
-      }
-      infoWindow.open(map, marker);
-      activeInfoWindow = infoWindow;
-    });
-  });
-  addHeatmapLayer(map);
-  return map;
-}
-// Open Gallery Modal
-function openGallery(images) {
-  let modal = document.getElementById("gallery-modal");
-  let modalImg = document.getElementById("gallery-modal-img");
-  let currentIndex = 0;
+        for (let i = 0; i < locations.length; i++) {
+            const currLocation = locations[i];
 
-  if (!images || images.length === 0) {
-    alert("No images available.");
-    return;
-  }
+            // Add marker
+            const marker = new google.maps.Marker({
+                position: { lat: currLocation[0], lng: currLocation[1] },
+                map: map,
+                title: currLocation[2],
+                icon: {
+                    url: currLocation[4],
+                    scaledSize: new google.maps.Size(currLocation[5], currLocation[6]),
+                },
+                animation: google.maps.Animation.DROP
+            });
 
-  modal.style.display = "flex";
-  modalImg.src = images[currentIndex];
+            // Add heatmap data point with weight based on the number of dogs
+            let numDogs = parseInt(currLocation[3].match(/\d+/)); // Extract number from "No. of dogs: X"
+            heatmapData.push({
+                location: new google.maps.LatLng(currLocation[0], currLocation[1]),
+                weight: numDogs
+            });
 
-  document.getElementById("gallery-next").onclick = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    modalImg.src = images[currentIndex];
-  };
+            // Info Window
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="text-align:center;">
+                        <h3>${currLocation[2]}</h3>
+                        <p>${currLocation[3]}</p>
+                        <img src="${currLocation[7]}" alt="Dog Image" style="width:150px;height:auto;border-radius:10px;">
+                    </div>
+                `
+            });
 
-  document.getElementById("gallery-prev").onclick = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    modalImg.src = images[currentIndex];
-  };
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
 
-  document.getElementById("gallery-close").onclick = () => {
-    modal.style.display = "none";
-  };
+        // Add Heatmap Layer
+        const heatmap = new google.maps.visualization.HeatmapLayer({
+            data: heatmapData,
+            dissipating: true,  // Enables gradual fade of heatmap
+            radius: 50,         // Adjusts the hotspot size
+            opacity: 0.5        // Controls the transparency of the heatmap
+        });
 
-  modal.onclick = (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
+        heatmap.setMap(map);
     }
-  };
-}
-function generateInfoWindowContent(place) {
-  let galleryPreview = "";
-  if (place.images && place.images.length > 0) {
-    galleryPreview = `
-        <div class="info-gallery">
-          <img src="${place.images[0]}" alt="${
-      place.name
-    }" class="info-thumbnail">
-          <button class="view-gallery-btn" onclick='openGallery(${JSON.stringify(
-            place.images
-          )})'>View Gallery</button>
-        </div>`;
-  }
-
-  return `<div class="info-window-content">
-        <b>${place.name}</b><br>
-        ${galleryPreview}
-      </div>`;
-}
-
-// Attach function to window so it can be called globally
-window.openGallery = openGallery;
-
-function addHeatmapLayer(map) {
-  const heatmapData = [
-    {
-      location: new google.maps.LatLng(12.02763, 79.8533),
-      weight: 10,
-    },
-    {
-      location: new google.maps.LatLng(12.02432, 79.84603), // Kannagi Hostel
-      weight: 8,
-    },
-    {
-      location: new google.maps.LatLng(12.01781, 79.85365), // Ponlait
-      weight: 8,
-    },
-  ];
-
-  const heatmap = new google.maps.visualization.HeatmapLayer({
-    data: heatmapData,
-    map: map,
-    radius: 500, // Small localized area
-    opacity: 0.7, // Slight transparency
-    gradient: [
-      "rgba(0, 255, 0, 0)",
-      "rgba(255, 165, 0, 1)",
-      "rgba(255, 0, 0, 1)",
-    ],
-  });
-
-  return heatmap;
-}
-
-// Attach function to window so we can call it dynamically
-window.initializeFaunaMap = initializeFaunaMap;
