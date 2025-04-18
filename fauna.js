@@ -25,8 +25,6 @@
 
 [12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "Dogs/Boys/auro7.jpg"]
     
-
-
 ];
 
         let heatmapData = [];
@@ -78,4 +76,63 @@
         });
 
         heatmap.setMap(map);
+
+
+        const crowHotspots = [
+            {
+                start: { lat:  12.028998, lng:79.848285  },
+                end: { lat: 12.029662, lng:79.849222  }
+            },
+            {
+                start: { lat:  12.021594, lng:79.853447  },
+                end: { lat: 12.021090, lng: 79.854954 }
+            },
+            {
+                start: { lat: 12.020768, lng:79.855881 },
+                end: { lat: 12.0209, lng: 79.85514 }
+            },
+            {
+                start: { lat: 12.020832, lng:79.857474 },
+                end: { lat: 12.0204, lng: 79.85731 }
+            },
+        ];
+        const crowHeatmapData = [];
+
+crowHotspots.forEach(hotspot => {
+    const centerLat = (hotspot.start.lat + hotspot.end.lat) / 2;
+    const centerLng = (hotspot.start.lng + hotspot.end.lng) / 2;
+
+    crowHeatmapData.push({
+        location: new google.maps.LatLng(centerLat, centerLng),
+        weight: 8 // You can adjust this to reflect "intensity" of crow presence
+    });
+
+    // Add crow icon marker at the center
+    new google.maps.Marker({
+        position: { lat: centerLat, lng: centerLng },
+        map: map,
+        title: "Crow Hotspot",
+        icon: {
+            url: "/crowicon.png", // Replace with your crow icon path
+            scaledSize: new google.maps.Size(38, 31),
+        },
+        animation: google.maps.Animation.DROP
+    });
+});
+
+// Add crow heatmap layer
+const crowHeatmap = new google.maps.visualization.HeatmapLayer({
+    data: crowHeatmapData,
+    radius: 90,
+    opacity: 0.6,
+    gradient: [
+        "rgba(0,0,0,0)",         // transparent
+        "rgba(106,13,173,0.6)",  // soft purple
+        "rgba(106,13,173,1)"     // intense purple
+    ]
+});
+
+crowHeatmap.setMap(map);
+
+    //we need more info on crows and more data.    
     }
