@@ -8,22 +8,22 @@
         });
 
         const locations = [
-            [12.022917784146761, 79.8468363524608, "NARMADA HOSTEL", "No. of dogs: 6", "dogMarker.png", 38, 31, "kannagi.jpg"],
-                [12.024334401832427, 79.84595658789404, "KANNAGI HOSTEL", "5 dogs and 2 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
-                [12.022261940087793, 79.84806212197712, "MOTHER THERESA MESS", "8 dogs and 3 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
-                [12.02227303907133, 79.84942976214973, "GANGA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannagi.jpg"],
-[12.022884311796183, 79.84816914861624, "MADAM CURIE  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "kannagi.jpg"],
-[12.022498675635342, 79.84865731065663, "YAMUNA  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannagi.jpg"],
-[12.02150703726073, 79.84973555868204, "SARASWATI  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "saraswati.jpg"],
-[12.020339627597007, 79.85028541152809, "KAVERI  HOSTEL", "6 dogs and 2 puppies", "dogMarker.png", 38, 31, "kannagi.jpg"],
+            [12.022917784146761, 79.8468363524608, "NARMADA HOSTEL", "No. of dogs: 6", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+                [12.024334401832427, 79.84595658789404, "KANNAGI HOSTEL", "5 dogs and 2 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+                [12.022261940087793, 79.84806212197712, "MOTHER THERESA MESS", "8 dogs and 3 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+                [12.02227303907133, 79.84942976214973, "GANGA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+[12.022884311796183, 79.84816914861624, "MADAM CURIE  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+[12.022498675635342, 79.84865731065663, "YAMUNA  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+[12.02150703726073, 79.84973555868204, "SARASWATI  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "Dogs/Girls/saraswati.jpg"],
+[12.020339627597007, 79.85028541152809, "KAVERI  HOSTEL", "6 dogs and 2 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
 
-[12.029370766606938, 79.84931225246086, " KANNADASAN HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kannadhasan.jpg"],
-[12.027691842933573, 79.84818572466193, "THIRUVALLUR STADIUM", "No. of dogs: 5", "dogMarker.png", 38, 31, "thiruvallur.jpg"],
-[12.029780002663266, 79.84873289530712, "MAKA  HOSTEL", "No. of dogs: 2", "dogMarker.png", 38, 31, "maka.jpg"],
-[12.02986394843738, 79.85198373266854, " KAMBAN  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "kamban1.jpg"],
-[12.030216211741985, 79.85338539478852, "BIRSA MUNDA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "birsa.jpg"],
+[12.029370766606938, 79.84931225246086, " KANNADASAN HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/kannadhasan.jpg"],
+[12.027691842933573, 79.84818572466193, "THIRUVALLUR STADIUM", "No. of dogs: 5", "dogMarker.png", 38, 31, "Dogs/Boys/thiruvallur.jpg"],
+[12.029780002663266, 79.84873289530712, "MAKA  HOSTEL", "No. of dogs: 2", "dogMarker.png", 38, 31, "Dogs/Boys/maka.jpg"],
+[12.02986394843738, 79.85198373266854, " KAMBAN  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/kamban1.jpg"],
+[12.030216211741985, 79.85338539478852, "BIRSA MUNDA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/birsa.jpg"],
 
-[12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "auro7.jpg"]
+[12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "Dogs/Boys/auro7.jpg"]
     
 
 
