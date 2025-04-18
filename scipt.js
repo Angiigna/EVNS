@@ -436,6 +436,60 @@ function initMap() {
         "Plants/yellowflame/yellowflameflower.jpg",
       ], // works 41
     },
+    {
+      name: "Heptapleurum actinophyllum ",
+      lat: 12.030012,
+      lng: 79.849974,
+      description: "Queensland umbrella tree",
+      images: [
+        "Plants/umbellatree/umbrellatree.jpg",
+        "Plants/umbellatree/umbrellatree1.jpg",
+        "Plants/umbellatree/umbrellatree2.jpg"
+      ], // works 43
+    },
+    {
+      name: "Cassia fistula L",
+      lat: 12.029621,
+      lng: 79.850473,
+      description: "Golden Shower Tree",
+      images: [
+        "Plants/goldenshowertree/goldenshower1.jpg",
+        "Plants/goldenshowertree/goldenshower2.jpg"
+      ], // works 44
+    },
+    {
+      name: "Dracaena fragrans ",
+      lat: 12.029627,
+      lng: 79.850477,
+      description: "Corn plant",
+      images: [
+        "Plants/cornplant/corn1.jpg",
+        "Plants/cornplant/corn2.jpg",
+        "Plants/cornplant/corn3.jpg"
+      ], // works 45
+    },
+    {
+      name: "Wrightia tinctoria ",
+      lat: 12.029571,
+      lng: 79.850632,
+      description: "dyer's oleander",
+      images: [
+        "Plants/dyers/dyer's.jpg",
+        "Plants/dyers/dyer'sflower.jpg",
+        "Plants/dyers/dyer'sleaf.jpg",
+      ], // works 46
+    },
+    {
+      name: "Araucaria columnaris",
+      lat: 12.029585,
+      lng: 79.850456,
+      description: "Cook-pine",
+      images: [
+        "Plants/cookpine/cookpine1.jpg",
+        "Plants/cookpine/cookpine2.jpg",
+        "Plants/cookpine/cookpine3.jpg",
+      ], // works 47
+    },
 
   ];// if anyone has good pics pls add them to the plant file and link them o the respctive tree or send the pics.
   // if possible can you send the photos of the plants y'all took to me along with the plant names?
