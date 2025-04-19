@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondicherry University GreenMap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="new.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70" tabindex="0">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="Pondy_Univ_logo1.png" alt="Logo" width="35" height="35" class="me-2">
+        Pondicherry University
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#flora">Flora</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="faunaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fauna
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="faunaDropdown">
+              <li><a class="dropdown-item" href="#dogs">Dogs</a></li>
+              <li><a class="dropdown-item" href="#crows">Crows</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#credits">Credits</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <section id="home">
+    <div class="container carousel-container">
+      <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="Plants/African.jpg" class="d-block w-100" alt="African Plant">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Welcome to Pondicherry University</h5>
+              <p>A Green Haven of Knowledge and Nature</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Plants/autographtree.jpg" class="d-block w-100" alt="Autograph Tree">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Discover Our Rich Flora</h5>
+              <p>From rare trees to vibrant flowering plants</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="Plants/banyan tree.jpg" class="d-block w-100" alt="Banyan Tree">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Nature Meets Campus Life</h5>
+              <p>Experience biodiversity in every step</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="custom-hr">
+
+  <section id="flora">
+    <div class="container" data-aos="fade-up">
+      <h2>Flora of Pondicherry University: A Green Haven</h2>
+      <p>Pondicherry University is renowned for its lush, green campus, which is home to a wide variety of plant species. These plants contribute significantly to the university's serene and vibrant environment, making it a peaceful place for both students and faculty. Beyond their aesthetic appeal, many of these plants play vital roles in maintaining the local ecosystem, improving air quality, and supporting biodiversity. Additionally, some of the species present in the campus are known for their medicinal properties, offering valuable resources for research in the field of botany and natural healing. Here are some of the notable trees and plants that can be found across the university grounds:</p>
+
+      <div class="card-row">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <img src="Plants/cherryplant.jpg" class="card-img-top" alt="Cherry Plant">
+          <div class="card-body">
+            <p class="card-text">Cherry plant description here.</p>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <img src="Plants/banyan tree.jpg" class="card-img-top" alt="Banyan Tree">
+          <div class="card-body">
+            <p class="card-text">Banyan tree details go here.</p>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <img src="Plants/autographtree.jpg" class="card-img-top" alt="Autograph Tree">
+          <div class="card-body">
+            <p class="card-text">Autograph tree information here.</p>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+          <img src="Plants/African.jpg" class="card-img-top" alt="African Plant">
+          <div class="card-body">
+            <p class="card-text">African plant info here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mt-3">
+        <a href="flora.html" class="btn btn-outline-primary">View all</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="custom-hr">
+  <section id="fauna">
+    <div class="container" data-aos="fade-up">
+      <h2>Fauna Section</h2>
+      <p>Pondicherry University is not only a haven for plant life but also for a rich diversity of fauna. 
+        The campus is home to various animal species, including birds, mammals, reptiles, and insects, each playing a crucial role in the ecological balance of the area. The presence of these animals enhances the biodiversity of the university, contributing to the vibrancy of the environment. Many species found here are integral to the local ecosystem, aiding in pollination, seed dispersal, and natural pest control. Some animals are also of cultural and scientific importance, providing valuable opportunities for research in fields like ecology, animal behavior, and conservation. The university’s commitment to preserving its natural surroundings ensures that both flora and fauna thrive in harmony.
+        Here are some of the notable animals you may encounter during your time at Pondicherry University:
+      </p>
+      
+      <!-- Dogs Section -->
+      <div class="card-row" id="dogs">
+        <h3>Dogs</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <img src="Dogs/campus/lhc.jpg" class="card-img-top" alt="Campus Dog 1">
+              <div class="card-body">
+                <p class="card-text">Description of campus fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+              <img src="Dogs/campus/ponlait.jpg" class="card-img-top" alt="Campus Dog 2">
+              <div class="card-body">
+                <p class="card-text">More details about campus fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+              <img src="Dogs/Boys/auro4.jpg" class="card-img-top" alt="Other Fauna 1">
+              <div class="card-body">
+                <p class="card-text">Information about other fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
+              <img src="Dogs/campus/sj.jpg" class="card-img-top" alt="Other Fauna 2">
+              <div class="card-body">
+                <p class="card-text">Additional info on local fauna.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end mt-3">
+        <a href="dogs.html" class="btn btn-outline-primary">View On Map</a>
+      </div>
+      
+      <!-- Crows Section -->
+      <div class="card-row" id="Crows">
+        <h3>Crows</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <img src="Dogs/campus/lhc.jpg" class="card-img-top" alt="Campus Dog 1">
+              <div class="card-body">
+                <p class="card-text">Description of campus fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+              <img src="Dogs/campus/ponlait.jpg" class="card-img-top" alt="Campus Dog 2">
+              <div class="card-body">
+                <p class="card-text">More details about campus fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+              <img src="Dogs/Boys/auro4.jpg" class="card-img-top" alt="Other Fauna 1">
+              <div class="card-body">
+                <p class="card-text">Information about other fauna.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
+              <img src="Dogs/campus/sj.jpg" class="card-img-top" alt="Other Fauna 2">
+              <div class="card-body">
+                <p class="card-text">Additional info on local fauna.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end mt-3">
+        <a href="crows.html" class="btn btn-outline-primary">View On Map</a>
+      </div>
+  </section>
+  
+  
+  
+  <section id="credits">
+    <div class="container" data-aos="fade-up">
+      <h2>Credits</h2>
+      <p>This project was made possible through the contributions of the following individuals. Each person has dedicated their skills and expertise to help create and bring this vision to life. Below are the key contributors:</p>
+      <div class="card-row">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <img src="path_to_image1.jpg" class="card-img-top" alt="Person 1">
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <p class="card-text">Lead Developer and Designer</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <img src="path_to_image2.jpg" class="card-img-top" alt="Person 2">
+          <div class="card-body">
+            <h5 class="card-title">Jane Smith</h5>
+            <p class="card-text">Project Manager</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <img src="path_to_image3.jpg" class="card-img-top" alt="Person 3">
+          <div class="card-body">
+            <h5 class="card-title">Alex Johnson</h5>
+            <p class="card-text">Content Writer</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+          <img src="path_to_image4.jpg" class="card-img-top" alt="Person 4">
+          <div class="card-body">
+            <h5 class="card-title">Emily Clark</h5>
+            <p class="card-text">UI/UX Designer</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+          <img src="path_to_image5.jpg" class="card-img-top" alt="Person 5">
+          <div class="card-body">
+            <h5 class="card-title">Michael Brown</h5>
+            <p class="card-text">Developer</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="600">
+          <img src="path_to_image6.jpg" class="card-img-top" alt="Person 6">
+          <div class="card-body">
+            <h5 class="card-title">Sarah Lee</h5>
+            <p class="card-text">Researcher</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="700">
+          <img src="path_to_image7.jpg" class="card-img-top" alt="Person 7">
+          <div class="card-body">
+            <h5 class="card-title">David Kim</h5>
+            <p class="card-text">Graphic Designer</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="800">
+          <img src="path_to_image8.jpg" class="card-img-top" alt="Person 8">
+          <div class="card-body">
+            <h5 class="card-title">Jessica White</h5>
+            <p class="card-text">Tester</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="900">
+          <img src="path_to_image9.jpg" class="card-img-top" alt="Person 9">
+          <div class="card-body">
+            <h5 class="card-title">Chris Martin</h5>
+            <p class="card-text">Support Specialist</p>
+          </div>
+        </div>
+  
+        <div class="card" data-aos="fade-up" data-aos-delay="1000">
+          <img src="path_to_image10.jpg" class="card-img-top" alt="Person 10">
+          <div class="card-body">
+            <h5 class="card-title">Nina Patel</h5>
+            <p class="card-text">Marketing & Outreach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 Pondicherry University. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
