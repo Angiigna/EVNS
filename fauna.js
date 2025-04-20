@@ -11,13 +11,13 @@
         const dogLocations = [
             [12.022917784146761, 79.8468363524608, "NARMADA HOSTEL", "No. of dogs: 6", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
                 [12.024334401832427, 79.84595658789404, "KANNAGI HOSTEL", "5 dogs and 2 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
-                [12.022261940087793, 79.84806212197712, "MOTHER THERESA MESS", "8 dogs and 3 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+                [12.022261940087793, 79.84806212197712, "MOTHER THERESA MESS", "8 dogs and 3 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/mess.jpg"],
                 [12.02227303907133, 79.84942976214973, "GANGA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
 [12.022884311796183, 79.84816914861624, "MADAM CURIE  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
 [12.022498675635342, 79.84865731065663, "YAMUNA  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
 [12.02150703726073, 79.84973555868204, "SARASWATI  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "Dogs/Girls/saraswati.jpg"],
 [12.020339627597007, 79.85028541152809, "KAVERI  HOSTEL", "6 dogs and 2 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
-            [12.02327944111214, 79.84694698064703, "GIRL’s TEA TIME ", "3 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/girlstea1.jpg"],
+            [12.02327944111214, 79.84694698064703, "GIRL’s TEA TIME ", "3 dogs ", "dogMarker.png", 38, 31, "Dogs/campus/girlstea1.jpg"],
 
 [12.029370766606938, 79.84931225246086, " KANNADASAN HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/kannadhasan.jpg"],
 [12.027691842933573, 79.84818572466193, "THIRUVALLUR STADIUM", "No. of dogs: 5", "dogMarker.png", 38, 31, "Dogs/Boys/thiruvallur.jpg"],
@@ -32,8 +32,8 @@
 [12.02947624762929, 79.85167443127524, "PAVENDAR BHARATHIDASAN  HOSTEL", "1dog ", "dogMarker.png", 38, 31, "Dogs/Boys/pavendar bharadhidasan.jpg"],
 [12.027097574866822, 79.85297411778491, "CV RAMAN HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/cv raman1.jpg"],
 [12.028213481492733, 79.85311116011296, "ILLANGO HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"],
-[12.029515087476772, 79.85110886690792, "TAGORE HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"]
-    
+[12.029515087476772, 79.85110886690792, "TAGORE HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"],
+    [12.033552359904611, 79.85818007203719, "SJ ", "9dogs ", "dogMarker.png", 38, 31, "Dogs/campus/sj.jpg"]
 ];
       
         for (let i = 0; i < dogLocations.length; i++) {
