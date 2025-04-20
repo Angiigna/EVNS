@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHome</title>
+  <!--  <link rel="stylesheet" href="style.css">-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            margin: 0;
+        }
+        body{
+         background: linear-gradient(to top,rgb(200, 241, 200),rgb(251, 251, 251));
+         user-select: none; 
+         touch-action: manipulation;
+        }
+        header{
+            padding: 30px;
+            padding-left: 180px;
+            background: linear-gradient(to top,green,rgb(7, 69, 26));
+          /* background-color: #224740;*/
+            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
+            border-radius: 0px 0px 80px 80px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        header h2{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 50px;
+            position: absolute;
+            right: 160px;
+            top: 35px;
+            font-weight: 300;
+            z-index: 2;
+            font-family: DM Serif Text;
+        }
+       
+       #video{
+          background-color: black;
+            height: calc(100vh + 35px);
+        }
+        #explorebt{
+            position: relative;
+            bottom: 70%;
+            z-index: 1000;
+            display: flex;
+            padding: 10px 30px;
+            margin :10px;
+            border-radius: 20px;
+            text-align: center;
+            align-items: center;
+            justify-self: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #224740;
+            cursor: pointer;
+            font-family: DM serif text;
+            font-size: medium;
+            color: white;
+        }
+        #explorebt:hover{
+            background: #306a5f;
+            padding: 13px 33px;
+        }
+        footer h4{
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-around;
+            text-align: left;
+            
+            margin: 10px;
+        }
+        .row h5{
+            text-align: center;
+            margin:10px 30px;
+            
+        }
+        #left{
+            width: 60%;
+            margin: 10px;
+            padding: 50px;
+            border-radius: 20px;
+            background-color: #224740;
+            color: white;
+            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);;
+        }
+        
+        #right{
+            background-color: white;
+            border-radius: 20px;
+            width: 30%;
+            margin: 10px ;
+            padding: 50px;
+            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
+            background-color: #224740;
+            color: white;
+        }
+        #obj {
+            
+            margin: 40px 100px;
+            font-family: poppins;
+        }
+        #obj h4{
+            text-align: center;
+            margin: 10px;
+            margin-top: 200px;
+        }
+        #obj p{
+            text-align: center;
+            font-size: smaller;
+            margin-bottom: 100px;
+        }
+        .pic{
+            margin: 0px 220px;
+        }
+        .txt{
+            margin: 20px;
+            
+            align-items: center;
+        }
+        .le{
+            margin-left: -200px;
+            margin-right: 220px;
+        }
+        #crow{
+            margin-right: -200px;
+            margin-left: 220px;
+        }
+        h6{
+            font-size: 14px;
+        }
+        #content{
+            font-family:poppins;
+            color: #224740;
+        }
+        footer{
+            font-family:poppins;
+            margin: 100px 10px 10px 10px;
+        }
+        footer h5{
+            font-size: 22px;
+        }
+        footer p{
+            font-size: small;
+        }
+        footer ul{
+            font-size: small;
+        }
+        video{
+         opacity: .5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="PU_Logo_Full.png" alt="pulogo">
+        <h2>GREEN MAPPING</h2>
+    </header>
+    <div id="video">
+        
+        <video autoplay muted  playsinline width="100%" id="vdo" height="100%" >
+            <source src="PU Google Earth.mp4" type="video/mp4" >
+            Your browser does not support the video tag.
+          </video>
+          <button id="explorebt">Explore  &#x2192;</button>
+    </div>
+    
+    <hr>
+    <div id="obj">
+        <h4>Why it matters?</h4>
+        <p>Our campus is home to an incredible array of trees, shrubs, birds, and animals, many of which go unnoticed in the hustle of daily academic life. This project invites you to pause, observe, and learn about the ecological web that makes this university a truly green haven.
+        </p>
+    </div>
+    <div id="content">
+        <div class="row">
+            <div class="pic">
+                <img src="tree.jpg" alt="Tree"width="400px" height="230px">
+            </div>
+            <div class="txt le" >
+                <h6>Flora of Pondicherry University: A Diverse and Vibrant Ecosystem.</h6>
+                <p>Pondicherry University's campus is home to a diverse and vibrant array of flora, showcasing a wide variety of plants and trees that add to the beauty and biodiversity of the environment. The campus's flora is a testament to the region's tropical climate and rich ecological heritage.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="txt" id="crow">
+                <h6>House Crows in Pondicherry University: A Ubiquitous Presence</h6>
+                <p>The House Crow (<em>Corvus splendens</em>) is a common and intelligent bird species found throughout Pondicherry University. These birds have adapted well to the urban environment and can be seen roaming around the campus, often in small groups. With their sleek black plumage and distinctive calls, House Crows are a familiar sight in the university.</p>
+            </div>
+            <div class="pic">
+                <img src="crow.jpg" alt="Bird" width="400px" height="230px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="pic">
+                <img src="makaDog1.jpg" alt="Animal" width="400px" height="230px">
+            </div>
+            <div class="txt le">
+                <h6>Dogs in Pondicherry University: A Complex Relationship</h6>
+                <p>Dogs (<em>Canis lupus familiaris</em>) are a common sight in Pondicherry University, roaming around the campus and interacting with students, faculty, and staff. These dogs have adapted to life on the streets, scavenging for food and avoiding hazards.</p>
+            </div>
+        </div>
+    </div><hr>
+    <footer>
+        <h4>About Us</h4>
+        <div class="row">
+        <div id="left">
+            <h5>Our Mission</h5>
+     
+            <p>
+                Pondicherry University Green Mapping is an initiative aimed at exploring and documenting 
+    the rich biodiversity of our campus, with a focus on both flora and fauna. Through 
+    interactive maps and data-driven storytelling, we strive to foster awareness, curiosity, 
+    and responsibility toward our natural surroundings.   
+            </p><br>
+            <p>By pinpointing plant species, tracking animal movements, and highlighting behavioral 
+                patterns, this platform seeks to provide an educational resource for students, researchers, 
+                and nature enthusiasts alike.</p>
+        </div>
+        <div id="right">
+            <h5>Worked together</h5>
+            <p>We are vibrant enthusiastic students of 3rd-year Integrated Computer Science department projects  green mapping the rich ecological diversity of Pondicherry University Campus through an interactive website.
+            </p>
+            <p style="margin: 10px;">With Regards,<br>
+                Athul Krishnan TR • Boda Kaveri • Fuad PP • Gokul G • Lakshmi Nandana B • Mohan Raju • Shwetha P • Sivangi Sankar • Tuvvadoddi Chandu • Viswapriya R</p>
+        </div>
+    </div>
+    </footer>
+    <script>
+        const video = document.getElementById('vdo');
+      
+        video.addEventListener('timeupdate', () => {
+          if (video.currentTime >= 14) {
+            video.pause();
+            video.currentTime = 14; // freeze exactly at 14s
+          }
+        });
+        document.addEventListener("dblclick", function(e) {
+  e.preventDefault(); // Stops zooming, text selection, etc.
+});
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+        </script>
+</body>
+</html>
