@@ -24,7 +24,14 @@
 [12.02986394843738, 79.85198373266854, " KAMBAN  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/kamban1.jpg"],
 [12.030216211741985, 79.85338539478852, "BIRSA MUNDA HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/birsa.jpg"],
 
-[12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "Dogs/Boys/auro7.jpg"]
+[12.029449153041673, 79.8531848506076, "AUROBINDO  HOSTEL", "4 dogs and 7 puppies", "dogMarker.png", 38, 31, "Dogs/Boys/auro7.jpg"],
+            [12.03029967187246, 79.8495002711638, "KALIDAS  HOSTEL", "3 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/kalidas1.jpg"],
+[12.02947624762929, 79.85167443127524, "VALMIKI  HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/valmiki.jpg"],
+[12.028716334345024, 79.85294887361006, "SUBRAMANIAN BHARATI  HOSTEL", "1 dog ", "dogMarker.png", 38, 31, "Dogs/Boys/subramaninan.jpg"],
+[12.02947624762929, 79.85167443127524, "PAVENDAR BHARATHIDASAN  HOSTEL", "1dog ", "dogMarker.png", 38, 31, "Dogs/Boys/pavendar bharadhidasan.jpg"],
+[12.027097574866822, 79.85297411778491, "CV RAMAN HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/cv raman1.jpg"],
+[12.028213481492733, 79.85311116011296, "ILLANGO HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"],
+
     
 ];
       
