@@ -31,7 +31,7 @@
 [12.02947624762929, 79.85167443127524, "PAVENDAR BHARATHIDASAN  HOSTEL", "1dog ", "dogMarker.png", 38, 31, "Dogs/Boys/pavendar bharadhidasan.jpg"],
 [12.027097574866822, 79.85297411778491, "CV RAMAN HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/cv raman1.jpg"],
 [12.028213481492733, 79.85311116011296, "ILLANGO HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"],
-
+[12.029515087476772, 79.85110886690792, "TAGORE HOSTEL", "2 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/ilango.jpg"]
     
 ];
       
