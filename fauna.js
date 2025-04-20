@@ -17,6 +17,7 @@
 [12.022498675635342, 79.84865731065663, "YAMUNA  HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
 [12.02150703726073, 79.84973555868204, "SARASWATI  HOSTEL", "No. of dogs: 4", "dogMarker.png", 38, 31, "Dogs/Girls/saraswati.jpg"],
 [12.020339627597007, 79.85028541152809, "KAVERI  HOSTEL", "6 dogs and 2 puppies", "dogMarker.png", 38, 31, "Dogs/Girls/kannagi.jpg"],
+            [12.02327944111214, 79.84694698064703, "GIRL’s TEA TIME ", "3 dogs ", "dogMarker.png", 38, 31, "Dogs/Boys/girlstea1.jpg"],
 
 [12.029370766606938, 79.84931225246086, " KANNADASAN HOSTEL", "No. of dogs: 3", "dogMarker.png", 38, 31, "Dogs/Boys/kannadhasan.jpg"],
 [12.027691842933573, 79.84818572466193, "THIRUVALLUR STADIUM", "No. of dogs: 5", "dogMarker.png", 38, 31, "Dogs/Boys/thiruvallur.jpg"],
