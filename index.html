@@ -1,253 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenHome</title>
-  <!--  <link rel="stylesheet" href="style.css">-->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-        *{
-            margin: 0;
-        }
-        body{
-         background: linear-gradient(to top,rgb(200, 241, 200),rgb(251, 251, 251));
-         user-select: none; 
-         touch-action: manipulation;
-        }
-        header{
-            padding: 30px;
-            padding-left: 180px;
-            background: linear-gradient(to top,green,rgb(7, 69, 26));
-          /* background-color: #224740;*/
-            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
-            border-radius: 0px 0px 80px 80px;
-            color: white;
-            margin-bottom: 10px;
-        }
-        header h2{
-            font-family:'Times New Roman', Times, serif;
-            font-size: 50px;
-            position: absolute;
-            right: 160px;
-            top: 35px;
-            font-weight: 300;
-            z-index: 2;
-            font-family: DM Serif Text;
-        }
-       
-       #video{
-          background-color: black;
-            height: calc(100vh + 35px);
-        }
-        #explorebt{
-            position: relative;
-            bottom: 70%;
-            z-index: 1000;
-            display: flex;
-            padding: 10px 30px;
-            margin :10px;
-            border-radius: 20px;
-            text-align: center;
-            align-items: center;
-            justify-self: center;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            background-color: #224740;
-            cursor: pointer;
-            font-family: DM serif text;
-            font-size: medium;
-            color: white;
-        }
-        #explorebt:hover{
-            background: #306a5f;
-            padding: 13px 33px;
-        }
-        footer h4{
-            margin-bottom: 10px;
-            text-align: center;
-            font-size: 30px;
-        }
-        .row{
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            justify-content: space-around;
-            text-align: left;
-            
-            margin: 10px;
-        }
-        .row h5{
-            text-align: center;
-            margin:10px 30px;
-            
-        }
-        #left{
-            width: 60%;
-            margin: 10px;
-            padding: 50px;
-            border-radius: 20px;
-            background-color: #224740;
-            color: white;
-            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);;
-        }
-        
-        #right{
-            background-color: white;
-            border-radius: 20px;
-            width: 30%;
-            margin: 10px ;
-            padding: 50px;
-            box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
-            background-color: #224740;
-            color: white;
-        }
-        #obj {
-            
-            margin: 40px 100px;
-            font-family: poppins;
-        }
-        #obj h4{
-            text-align: center;
-            margin: 10px;
-            margin-top: 200px;
-        }
-        #obj p{
-            text-align: center;
-            font-size: smaller;
-            margin-bottom: 100px;
-        }
-        .pic{
-            margin: 0px 220px;
-        }
-        .txt{
-            margin: 20px;
-            
-            align-items: center;
-        }
-        .le{
-            margin-left: -200px;
-            margin-right: 220px;
-        }
-        #crow{
-            margin-right: -200px;
-            margin-left: 220px;
-        }
-        h6{
-            font-size: 14px;
-        }
-        #content{
-            font-family:poppins;
-            color: #224740;
-        }
-        footer{
-            font-family:poppins;
-            margin: 100px 10px 10px 10px;
-        }
-        footer h5{
-            font-size: 22px;
-        }
-        footer p{
-            font-size: small;
-        }
-        footer ul{
-            font-size: small;
-        }
-        video{
-         opacity: .5;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="PU_Logo_Full.png" alt="pulogo">
-        <h2>GREEN MAPPING</h2>
-    </header>
-    <div id="video">
-        
-        <video autoplay muted  playsinline width="100%" id="vdo" height="100%" >
-            <source src="PU Google Earth.mp4" type="video/mp4" >
-            Your browser does not support the video tag.
-          </video>
-          <button id="explorebt">Explore  &#x2192;</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pondicherry University Green Mapping</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scipt.js" defer></script>
+    <!-- Default Flora Map -->
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h2>Green Mapping</h2>
+      <ul>
+        <li><a href="#" id="flora-btn">Flora</a></li>
+        <li><a href="#" id="fauna-btn">Fauna</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-    
-    <hr>
-    <div id="obj">
-        <h4>Why it matters?</h4>
-        <p>Our campus is home to an incredible array of trees, shrubs, birds, and animals, many of which go unnoticed in the hustle of daily academic life. This project invites you to pause, observe, and learn about the ecological web that makes this university a truly green haven.
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header Section -->
+      <header>
+        <h1>Pondicherry University Green Mapping</h1>
+        <p>
+          Explore the geolocation of plants and track route changes over time.
         </p>
-    </div>
-    <div id="content">
-        <div class="row">
-            <div class="pic">
-                <img src="tree.jpg" alt="Tree"width="400px" height="230px">
-            </div>
-            <div class="txt le" >
-                <h6>Flora of Pondicherry University: A Diverse and Vibrant Ecosystem.</h6>
-                <p>Pondicherry University's campus is home to a diverse and vibrant array of flora, showcasing a wide variety of plants and trees that add to the beauty and biodiversity of the environment. The campus's flora is a testament to the region's tropical climate and rich ecological heritage.</p>
-            </div>
+      </header>
+
+      <!-- Google Map Container (FULL SIZE) -->
+      <div id="map"></div>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="hidden">
+        <span id="gallery-close">&times;</span>
+        <img id="gallery-modal-img" src="" alt="Gallery Image" />
+        <div id="gallery-controls">
+          <button id="gallery-prev" class="gallery-btn">&#10094;</button>
+          <button id="gallery-next" class="gallery-btn">&#10095;</button>
         </div>
-        <div class="row">
-            <div class="txt" id="crow">
-                <h6>House Crows in Pondicherry University: A Ubiquitous Presence</h6>
-                <p>The House Crow (<em>Corvus splendens</em>) is a common and intelligent bird species found throughout Pondicherry University. These birds have adapted well to the urban environment and can be seen roaming around the campus, often in small groups. With their sleek black plumage and distinctive calls, House Crows are a familiar sight in the university.</p>
-            </div>
-            <div class="pic">
-                <img src="crow.jpg" alt="Bird" width="400px" height="230px">
-            </div>
-        </div>
-        <div class="row">
-            <div class="pic">
-                <img src="makaDog1.jpg" alt="Animal" width="400px" height="230px">
-            </div>
-            <div class="txt le">
-                <h6>Dogs in Pondicherry University: A Complex Relationship</h6>
-                <p>Dogs (<em>Canis lupus familiaris</em>) are a common sight in Pondicherry University, roaming around the campus and interacting with students, faculty, and staff. These dogs have adapted to life on the streets, scavenging for food and avoiding hazards.</p>
-            </div>
-        </div>
-    </div><hr>
-    <footer>
-        <h4>About Us</h4>
-        <div class="row">
-        <div id="left">
-            <h5>Our Mission</h5>
-     
+      </div>
+
+      <!-- Facts Section (User Scrolls Down to See) -->
+      <!-- Facts Section (User Scrolls Down to See) -->
+      <!-- Flora Facts Section -->
+      <section id="flora-facts-section">
+        <h2>Flora of Pondicherry University: A Green Haven</h2>
+        <p>
+          Pondicherry University boasts a rich and diverse range of plant
+          species, contributing to its green and serene environment. These
+          plants not only enhance the beauty of the campus but also serve
+          ecological and medicinal purposes. Below are some notable trees and
+          plants found within the university grounds:
+        </p>
+
+        <div class="flora-container">
+          <div class="flora-item">
+            <img
+              src="Plants/Red frangipani, Plumeria rubra.jpg"
+              alt="Red Frangipani"
+            />
+            <h3>Red Frangipani (Plumeria rubra)</h3>
+            <p><b>Origin:</b> Mexico, Central America</p>
+            <p><b>Location:</b> Opposite to Boy's Tea Time</p>
             <p>
-                Pondicherry University Green Mapping is an initiative aimed at exploring and documenting 
-    the rich biodiversity of our campus, with a focus on both flora and fauna. Through 
-    interactive maps and data-driven storytelling, we strive to foster awareness, curiosity, 
-    and responsibility toward our natural surroundings.   
-            </p><br>
-            <p>By pinpointing plant species, tracking animal movements, and highlighting behavioral 
-                patterns, this platform seeks to provide an educational resource for students, researchers, 
-                and nature enthusiasts alike.</p>
-        </div>
-        <div id="right">
-            <h5>Worked together</h5>
-            <p>We are vibrant enthusiastic students of 3rd-year Integrated Computer Science department projects  green mapping the rich ecological diversity of Pondicherry University Campus through an interactive website.
+              Known for its vibrant red flowers, this tropical beauty is often
+              used in traditional rituals and as an ornamental plant.
             </p>
-            <p style="margin: 10px;">With Regards,<br>
-                Athul Krishnan TR • Boda Kaveri • Fuad PP • Gokul G • Lakshmi Nandana B • Mohan Raju • Shwetha P • Sivangi Sankar • Tuvvadoddi Chandu • Viswapriya R</p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/Bamboo/Bamboo 1.jpg" alt="Bamboo" />
+            <h3>Bamboo</h3>
+            <p><b>Origin:</b> Asia, South America, Africa</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              Bamboo is a fast-growing species that plays a crucial role in
+              preventing soil erosion and providing habitat for various
+              wildlife.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Sausage Tree, Kigelia Africana/1.jpg"
+              alt="Sausage Tree"
+            />
+            <h3>Sausage Tree (Kigelia africana)</h3>
+            <p><b>Origin:</b> Tropical Africa</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              Named after its unique sausage-shaped fruits, this tree is valued
+              for its medicinal properties, particularly for skin treatments.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Touch me not, Mimosa Pudica/2.jpg"
+              alt="Touch-Me-Not"
+            />
+            <h3>Touch-Me-Not (Mimosa pudica)</h3>
+            <p><b>Origin:</b> South and Central America</p>
+            <p><b>Coordinates:</b> 12.030723, 79.858859</p>
+            <p>
+              A fascinating plant that reacts to touch by folding its leaves. It
+              is widely used in Ayurveda for its anti-inflammatory properties.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Peltophorum pterocarpum, Copper Pod/1.jpg"
+              alt="Copper Pod"
+            />
+            <h3>Copper Pod (Peltophorum pterocarpum)</h3>
+            <p><b>Origin:</b> South and Southeast Asia</p>
+            <p><b>Coordinates:</b> 12.030633, 79.858880</p>
+            <p>
+              This tree is recognized for its golden-yellow flowers and is often
+              planted along roadsides as an ornamental shade tree.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/African.jpg" alt="African Tulip Tree" />
+            <h3>African Tulip Tree (Spathodea campanulata)</h3>
+            <p><b>Origin:</b> West Africa</p>
+            <p><b>Coordinates:</b> 12.031510, 79.860296</p>
+            <p>
+              An exotic tree with striking red-orange flowers that attract birds
+              and pollinators.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Empress tree, Paulownia tomentosa.jpg"
+              alt="Empress Tree"
+            />
+            <h3>Empress Tree (Paulownia tomentosa)</h3>
+            <p><b>Origin:</b> China</p>
+            <p><b>Coordinates:</b> 12.033173, 79.859959</p>
+            <p>
+              A fast-growing tree known for its large, heart-shaped leaves and
+              violet flowers, widely cultivated for timber.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Neem Tree, Azadirachta Indica/unnamed.jpg"
+              alt="Neem Tree"
+            />
+            <h3>Neem Tree (Azadirachta indica)</h3>
+            <p><b>Origin:</b> Indian Subcontinent</p>
+            <p><b>Coordinates:</b> 12.034057, 79.857298</p>
+            <p>
+              A sacred tree known for its antibacterial and antifungal
+              properties, used in traditional medicine and organic farming.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/MangoTree.jpg" alt="Mango Tree" />
+            <h3>Mango Tree (Mangifera indica)</h3>
+            <p><b>Origin:</b> South Asia</p>
+            <p><b>Coordinates:</b> 12.016100, 79.853523</p>
+            <p>
+              One of India's most beloved fruit trees, known for its delicious
+              mangoes and lush green foliage.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/KapokTree.jpg" alt="Kapok Tree" />
+            <h3>Kapok Tree (Ceiba pentandra)</h3>
+            <p><b>Origin:</b> Central and South America</p>
+            <p><b>Coordinates:</b> 12.017323, 79.853045</p>
+            <p>
+              A towering tree known for its silky fibers used in stuffing
+              pillows and mattresses.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img src="Plants/jamuntree/jamuntree.jpg" alt="Jamun Tree" />
+            <h3>Jamun Tree or Indian Blackberry</h3>
+            <p><b>Origin:</b> Indian Subcontinent, Southeast Asia</p>
+            <p><b>Coordinates:</b>12.020798, 79.855852</p>
+            <p>
+              The Jamun Tree is an evergreen tree with a dense canopy of
+              elliptical leaves and clusters of small, round fruits. Its deep
+              purple hue and unique sweet-tart taste make Jamun a sought-after
+              treat in various culinary delights.
+            </p>
+          </div>
+
+          <div class="flora-item">
+            <img
+              src="Plants/Yelowsilkcotton/yellowsilkcotton.jpg"
+              alt="Yellow Silk Cotton Tree"
+            />
+            <h3>Yellow Silk Cotton Tree or Cochlospermum gossypium</h3>
+            <p>
+              <b>Origin:</b> Tropical regions of Indian Subcontinent, Southeast
+              Asia
+            </p>
+            <p><b>Coordinates:</b>12.021068, 79.855660</p>
+            <p>
+              A flowering plant growing to a height of 7.5 m (25 ft) usually
+              found in dry deciduous forests Another common name is buttercup
+              tree.In Theravada Buddhism, this plant is said to have used as the
+              tree for achieved enlightenment.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/pinktrumpet/pinktrumpetflower.jpg"
+              alt="pink trumpet tree"
+            />
+            <h3>Pink Trumpet Tree or Tabebuia rosea tree</h3>
+            <p>
+              <b>Origin:</b> Native to Central and South America
+            </p>
+            <p><b>Coordinates:</b>12.021618,79.855919</p>
+            <p>
+              Tabebuia rosea, also called pink poui, and rosy trumpet tree is a neotropical tree that grows up to 30 m (98 ft) and can reach a diameter at breast height of up to 100 cm (3 ft).
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/arecapalm.jpg"
+              alt="Areca Palm"
+            />
+            <h3>Dypsis lutescens or Areca Palm</h3>
+            <p>
+              <b>Origin:</b> Native to Madagascar
+            </p>
+            <p><b>Coordinates:</b>12.021618,79.855919</p>
+            <p>
+              Dypsis lutescens most commonly known as areca palm is a beautiful palm plant and is a very popular ornamental all over the world. It is a very hardy plant and can survive in almost all weather conditions. It is particularly popular for its unique nature of giving out oxygen during the night time and also helps in purifying the air inside.
+
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/badmintonballtree/badmintonbaltree.jpg"
+              alt="Badminton Ball Tree"
+            />
+            <h3>Badminton Ball Tree (Parkia biglandulosa)</h3>
+            <p>
+              <b>Origin:</b> Southeast Asia
+            </p>
+            <p><b>Coordinates:</b>12.033173, 79.859959</p>
+            <p>
+              Commonly found near academic buildings, this tree produces spherical flower heads that resemble badminton shuttlecocks, giving it its common name. The tree can grow up to 30 meters tall and has compound leaves that fold at night. Its pods contain edible seeds that are used in certain traditional dishes in Southeast Asia.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/Indian Cork Tree, Millingtonia Hortensis.jpg"
+              alt="Indian Cork Tree"
+            />
+            <h3>Indian Cork Tree (Millingtonia hortensis)</h3>
+            <p>
+              <b>Origin:</b> Myanmar and Thailand
+            </p>
+            <p><b>Coordinates:</b>12.03406, 79.856588</p>
+            <p>
+              Also known as the Tree Jasmine, this tall evergreen tree produces fragrant white flowers, especially during the night. It can grow up to 25 meters tall with a straight trunk. The bark is used in traditional medicine to treat asthma and other respiratory conditions. The light, cork-like bark gives it its common name.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/ButterTree.jpg"
+              alt="Indian Butter Tree"
+            />
+            <h3>Indian Butter Tree (Madhuca longifolia)</h3>
+            <p>
+              <b>Origin:</b> Indian Subcontinent
+            </p>
+            <p><b>Coordinates:</b>12.01731, 79.85265</p>
+            <p>
+              Also known as Mahua, this tree produces edible flowers that are fermented to make alcoholic beverages in tribal areas. The seeds yield butter-like oil used in cooking, soap-making, and traditional medicine. It can grow up to 20 meters tall and is considered sacred in many Indian communities.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/cherryplant.jpg"
+              alt="Cherry tree"
+            />
+            <h3> Cherry Tree (Prunus species)</h3>
+            <p>
+              <b>Origin:</b> Depends on species, many from Asia and Europe
+            </p>
+            <p><b>Coordinates:</b>12.016149, 79.85415</p>
+            <p>
+              This beautiful flowering tree produces an abundance of blossoms, creating a stunning visual display during the flowering season. The specific variety at this location adds ornamental value to the campus with its seasonal blooms and compact growth habit.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/Gliricidia sepium.jpg"
+              alt="Madre de cacao"
+            />
+            <h3>Madre de Cacao (Gliricidia sepium)</h3>
+            <p>
+              <b>Origin:</b>Central America
+            </p>
+            <p><b>Coordinates:</b>12.03406, 79.856588</p>
+            <p>
+              A multipurpose tree used in agroforestry systems, it produces pink to purple flowers and has nitrogen-fixing properties that improve soil fertility. Growing to 10-12 meters tall, it's commonly used as living fences and shade trees for coffee and cacao plantations. All parts of the plant are toxic to rodents, giving it another common name, "Rat Killer."
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/banyan tree.jpg"
+              alt="Banyan Tree"
+            />
+            <h3>Banyan Tree (Ficus benghalensis)</h3>
+            <p>
+              <b>Origin:</b>Indian Subcontinent
+            </p>
+            <p><b>Coordinates:</b>12.01636, 79.85378</p>
+            <p>
+              India's national tree, known for its aerial prop roots that grow into thick woody trunks. It can spread over several acres, creating a mini-ecosystem supporting numerous life forms. Some banyan trees are hundreds of years old and have cultural and spiritual significance in Hinduism and Buddhism.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/WildIndianAlmond.jpg"
+              alt="Wild Indian Almond"
+            />
+            <h3>Wild Indian Almond (Sterculia foetida)</h3>
+            <p>
+              <b>Origin:</b>East Africa, South and Southeast Asia
+            </p>
+            <p><b>Coordinates:</b>12.015963, 79.854473</p>
+            <p>
+              This large deciduous tree produces star-shaped pods containing edible seeds. The tree can grow up to 40 meters tall with a straight trunk and horizontally spreading branches. Despite its name "foetida" (meaning foul-smelling), it's valued for its timber and medicinal properties.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/PilkanTree.jpg"
+              alt="Pilkhan Tree"
+            />
+            <h3>Pilkhan Tree (Ficus virens)</h3>
+            <p>
+              <b>Origin:</b>South and Southeast Asia
+            </p>
+            <p><b>Coordinates:</b>12.0166, 79.85318</p>
+            <p>
+              Also known as the White Fig, this tree starts life as an epiphyte, eventually sending roots to the ground and sometimes strangling its host. It produces small fig fruits that are popular with birds and wildlife. The tree can grow to 30 meters tall and has medicinal uses in traditional Ayurvedic medicine.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/Teak.jpg"
+              alt="Teak"
+            />
+            <h3>Teak (Tectona grandis)</h3>
+            <p>
+              <b>Origin:</b>South and Southeast Asia
+            </p>
+            <p><b>Coordinates:</b> 12.015774, 79.854724</p>
+            <p>
+              Prized for its highly durable wood that's resistant to termites, fungal decay, and water damage. The tree can grow up to 40 meters tall with large, ovate leaves. Teak wood is one of the most valuable timbers worldwide, used in high-quality furniture, shipbuilding, and decorative objects.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+            src="Plants/Flametree.jpg"
+            alt="Flame tree"
+          />
+          <h3> Flame Tree (Delonix regia)</h3>
+          <p>
+            <b>Origin:</b>Madagascar
+          </p>
+          <p><b>Coordinates:</b> 12.016723, 79.85354</p>
+          <p>
+            Also known as Royal Poinciana or Flamboyant, this tree produces spectacular displays of fiery red-orange blooms. It grows up to 12 meters tall with a wide-spreading umbrella-shaped canopy and delicate fern-like leaves. It's known as one of the most colorful trees in the world during its flowering period.
+          </p>
         </div>
+        <div class="flora-item">
+          <img
+            src="Plants/earpodtree/Earpodtree.jpg"
+            alt="Earpod tree"
+          />
+          <h3>Earpod Tree (Enterolobium cyclocarpum)</h3>
+          <p>
+            <b>Origin:</b>Central and South America
+          </p>
+          <p><b>Coordinates:</b>12.021086, 79.854311</p>
+          <p>
+            Named after its distinctive ear-shaped seed pods, this massive tree can grow up to 35 meters tall with a broad, umbrella-shaped crown. It's one of the largest trees in the Americas, with a trunk diameter reaching up to 3 meters. The wood is used in furniture making, and the tree has nitrogen-fixing properties beneficial for soil.
+          </p>
+        </div>
+        <div class="flora-item">
+          <img
+            src="Plants/autographtree.jpg"
+            alt="Autograph Tree"
+          />
+          <h3>Autograph Tree (Clusia rosea)</h3>
+          <p>
+            <b>Origin:</b>Caribbean
+          </p>
+          <p><b>Coordinates:</b>12.021604, 79.853932</p>
+          <p>
+            Also known as the Pitch Apple, this evergreen tree gets its common name from the ease with which one can scratch messages onto its thick, leathery leaves. It produces large white flowers with pink centers and starts life as an epiphyte, eventually sending down aerial roots. It's considered invasive in some Pacific islands.
+          </p>
+        </div>
+        <div class="flora-item">
+          <img
+            src="Plants/tamrind/amrindcloseup.jpg"
+            alt="Tamrind Tree"
+          />
+          <h3>Tamarind Tree (Tamarindus indica)</h3>
+          <p>
+            <b>Origin:</b> Africa
+          </p>
+          <p><b>Coordinates:</b>12.02526, 79.85082</p>
+          <p>
+            Despite its name suggesting Indian origin, the tamarind originated in Africa but has been cultivated in India for thousands of years. The tree produces pod-like fruits with a sweet-sour pulp used extensively in Asian and Latin American cuisines. It can grow up to 30 meters tall and live for over 200 years.
+          </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/peepal/peepaltree.jpg"
+              alt="Peepal Tree"
+            />
+            <h3>Peepal Tree (Ficus religiosa)</h3>
+            <p>
+              <b>Origin:</b>Indian Subcontinent
+            </p>
+            <p><b>Coordinates:</b>12.02192, 79.85295</p>
+            <p>
+              Also known as the Sacred Fig or Bodhi Tree, it has deep religious significance in Hinduism, Buddhism, and Jainism. Buddha is said to have attained enlightenment under this tree. It has distinctive heart-shaped leaves with elongated tips and can live for hundreds of years, reaching heights of up to 30 meters.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/trumpetvine/white trumpet vine.jpg"
+              alt="White Trumpet Vine"
+            />
+            <h3>White Trumpet Vine (Brugmansia suaveolens)</h3>
+            <p>
+              <b>Origin:</b>South America
+            </p>
+            <p><b>Coordinates:</b>12.021372, 79.853283</p>
+            <p>
+              Also called Angel's Trumpet, this woody shrub or small tree produces large, fragrant, hanging trumpet-shaped flowers that bloom at night. All parts of the plant are highly toxic, containing tropane alkaloids. It can grow up to 5 meters tall and was traditionally used by shamans in South America for its hallucinogenic properties.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/bougenvillea/bougenvillea.jpg"
+              alt="Bougainvillea"
+            />
+            <h3>Bougainvillea (Bougainvillea species)</h3>
+            <p>
+              <b>Origin:</b>South America  
+            </p>
+            <p><b>Coordinates:</b>12.02289, 79.85247 </p>
+            <p>
+              Often called paperflower, this popular ornamental vine is known for its vibrant paper-like modified leaves (bracts) in shades of pink, purple, red, orange, or white. The true flowers are small and usually white. Bougainvillea is drought-tolerant, can be trained as a climbing vine or pruned into a shrub, and blooms nearly year-round in tropical climates.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/lipsticktree.jpg"
+              alt="Lipstick Tree"
+            />
+            <h3>Lipstick Tree (Bixa orellana)</h3>
+            <p>
+              <b>Origin:</b> Tropical Americas 
+            </p>
+            <p><b>Coordinates:</b>12.02308, 79.84727 </p>
+            <p>
+              Named for the bright red-orange dye extracted from its seeds, which has been used as body paint, food coloring, and lipstick. The small tree or shrub produces pretty pink flowers and spiny heart-shaped seed pods. The natural dye, annatto, is still widely used as a culinary colorant in foods like cheese, butter, and rice dishes.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/dragonbones/candeblara.jpg"
+              alt="Lipstick Tree"
+            />
+            <h3>Dragon Bones/Candelabra Plant (Euphorbia lactea)</h3>
+            <p>
+              <b>Origin:</b>Southeast Asia and India 
+            </p>
+            <p><b>Coordinates:</b>12.022316, 79.847822</p>
+            <p>
+              This succulent cactus-like plant has a distinctive candelabra-shaped growth pattern with upright, branching stems featuring three ribs with small spines. Often cultivated with crested forms that resemble brain coral. Like other euphorbias, it contains a toxic white latex. It can grow up to 5 meters tall in ideal conditions.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/chickoo/chicootree.jpg"
+              alt="Chiku"
+            />
+            <h3>Chiku/Sapodilla (Manilkara zapota)</h3>
+            <p>
+              <b>Origin:</b>Central America and southern Mexico
+            </p>
+            <p><b>Coordinates:</b>12.0214, 79.8496 </p>
+            <p>
+              An evergreen tree that produces sweet, brown fruits with a flavor similar to pears and brown sugar. The tree can grow up to 30 meters tall and once was the source of chicle, the original base for chewing gum. It has dark, glossy leaves and can live for over 100 years while continuing to produce fruit.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/mimosa/mimosa.jpg"
+              alt="Mimosa"
+            />
+            <h3>Mimosa Tree (Albizia julibrissin)</h3>
+            <p>
+              <b>Origin:</b>Southwest and Eastern Asia
+            </p>
+            <p><b>Coordinates:</b>12.026192, 79.851797</p>
+            <p>
+              Also known as the Silk Tree or Persian Silk Tree, this small deciduous tree produces delicate pink, silky thread-like flowers that resemble pom-poms. The leaves are fern-like and fold at night or when touched, similar to the Touch-Me-Not plant. It grows quickly to about 12 meters tall and has a broad, spreading crown.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/rivertamrind.jpg"
+              alt="river tamarind"
+            />
+            <h3>River Tamarind (Leucaena leucocephala)</h3>
+            <p>
+              <b>Origin:</b>Southern Mexico and Northern Central America
+            </p>
+            <p><b>Coordinates:</b>12.01882, 79.850851</p>
+            <p>
+              A fast-growing small tree that produces white, globular flowers and flat seed pods. It's extensively used in agroforestry as it fixes nitrogen in the soil. While valuable for erosion control and as a protein-rich fodder crop, it's considered invasive in many tropical regions due to its aggressive spreading nature.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/foxtailpalm/foxtailpalmdroop.jpg"
+              alt="Foxtail Palm"
+            />
+            <h3>Foxtail Palm (Wodyetia bifurcata)</h3>
+            <p>
+              <b>Origin:</b> Australia
+            </p>
+            <p><b>Coordinates:</b>12.02692, 79.852961</p>
+            <p>
+              Named for its distinctive fronds that resemble a fox's tail, this elegant palm was only discovered by science in the 1970s. It can grow up to 10 meters tall with a smooth, gray trunk. The palm produces bright red fruits and is widely cultivated as an ornamental in tropical and subtropical regions worldwide.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/azaela/azaelaflower.jpg"
+              alt="Azaela Plant"
+            />
+            <h3>Azalea Plant (Rhododendron species)</h3>
+            <p>
+              <b>Origin:</b>Varies by species, many from Asia, North America, and Europe
+            </p>
+            <p><b>Coordinates:</b>12.02789, 79.85435</p>
+            <p>
+              These flowering shrubs are known for their spectacular spring blooms in shades of pink, red, purple, white, and orange. Technically all azaleas are rhododendrons, though they tend to be smaller with thinner leaves. They prefer acidic soil and partial shade and are widely cultivated for their ornamental value.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/raintree/raintree2.jpg"
+              alt="Rain tree"
+            />
+            <h3>Rain Tree (Samanea saman)</h3>
+            <p>
+              <b>Origin:</b>Central and South America
+            </p>
+            <p><b>Coordinates:</b>12.034022, 79.856566 </p>
+            <p>
+              Also known as the Monkey Pod Tree, this massive shade tree can grow up to 25 meters tall with a canopy spread of 30 meters or more. It gets its name because the leaves fold at night and during rain. The tree produces pink puffball flowers and woody pods containing edible seeds covered in sweet pulp.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/coralwood/coralwoodtree.jpg"
+              alt="Coralwood Tree"
+            />
+            <h3></h3>
+            <p>
+              <b>Origin:</b> Southern Asia and Pacific Islands 
+            </p>
+            <p><b>Coordinates:</b>12.034882, 79.857618 </p>
+            <p>
+              Also called Red Sandalwood or Red Bead Tree, this legume produces bright red seeds that are used as beads in jewelry and for traditional weight measurements (they each weigh almost exactly one grain/0.065g). The tree can grow up to 20 meters tall and provides valuable hardwood timber with a red heartwood.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/coralwood/coralwoodtree.jpg"
+              alt="Coralwood Tree"
+            />
+            <h3></h3>
+            <p>
+              <b>Origin:</b> Southern Asia and Pacific Islands 
+            </p>
+            <p><b>Coordinates:</b>12.034882, 79.857618 </p>
+            <p>
+              Also called Red Sandalwood or Red Bead Tree, this legume produces bright red seeds that are used as beads in jewelry and for traditional weight measurements (they each weigh almost exactly one grain/0.065g). The tree can grow up to 20 meters tall and provides valuable hardwood timber with a red heartwood.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/copperleaf/copperleafplant.jpg"
+              alt="copperleaf"
+            />
+            <h3>Copper Leaf (Acalypha wilkesiana)</h3>
+            <p>
+              <b>Origin:</b>  Pacific Islands
+            </p>
+            <p><b>Coordinates:</b>12.034353, 79.858749 </p>
+            <p>
+              A colorful ornamental shrub with large, heart-shaped leaves that display stunning patterns of red, copper, pink, and green. It can grow up to 3 meters tall and is commonly used as a hedge or accent plant in tropical landscapes. The plant produces small, inconspicuous flowers on catkin-like spikes.
+            </p>
+          </div>
+          <div class="flora-item">
+            <img
+              src="Plants/yellowflame/yellowflameflower.jpg"
+              alt="Yellow Flame"
+            />
+            <h3>Yellow Flame (Peltophorum pterocarpum)</h3>
+            <p>
+              <b>Origin:</b>Southeast Asia and Northern Australia
+            </p>
+            <p><b>Coordinates:</b>12.01844, 79.85074</p>
+            <p>
+              Also known as Copper Pod or Yellow Poinciana, this medium to large deciduous tree produces masses of bright yellow flowers, creating a spectacular display when in bloom. It can grow up to 24 meters tall and is widely planted as a shade and ornamental tree throughout tropical regions. The wood is used for cabinetry and construction.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Fauna Facts Section -->
+      <section id="fauna-facts-section">
+        <button id="toggleBtn">
+          Show Crows
+      </button> <br>
+        <h1>BINOMIAL NAME: <I> Canis familiaris  </I></h1>
+      <P ><b>The dog</b> is a domesticated descendant of the gray wolf. Also called the domestic dog, it was selectively bred from an extinct population of wolves during the Late Pleistocene by hunter-gatherers. The dog was the first species to be domesticated by humans, over 14,000 years ago and before the development of agriculture. Due to their long association with humans, dogs have gained the ability to thrive on a starch-rich diet that would be inadequate for other canids.
+        <H2>Scientific classification</H2> <br>
+        <div class="fauna-hostel">
+          <H2>Scientific classification</H2> 
+          <ul>
+            <li><b> Domain:</b> 		Eukaryota</li>
+            <li><b>Kingdom:</b> 	Animalia</li>
+            <li><b>Phylum:</b> 	Chordata</li>
+            <li><b> Class:</b> Mammalia</li>
+            <li><b>Order:</b> Carnivora</li>
+            <li><b> Family:</b> Canidae</li>
+            <li><b> Genus:</b> Canis</li>
+            <li><b> Species:</b> C. familiaris</li>
+          </ul>
+
+        </div>
+        <div class="ecoimp">
+        	 <h1>ECOLOGICAL ROLE:</h1>
+         <b>Natural Pest Control</b> <br>
+         Stray dogs help in rodent populations by preying on them, which keeps their population in check. It also reduces the need to spray chemical pesticides to kill these rodents, thereby promoting a healthier environment. Stray dogs also help in managing the population of small insects and other pests; this limits the spread of diseases and protects the crops from being damaged. Stray dogs role in balancing this process highlights their importance and the need to ensure that their population is effectively managed as we also acknowledge their ecological contributions. <br>
+         
+        <b> Ecological Balancers</b> <br>
+         By preying on small insects and rodents, stray dogs play an important role in indirectly supporting the survival of various plants and animal species that otherwise can be impacted by these pests. Additionally, stray dogs scavenging role helps in the process of decomposition of organic  waste. They consume these wastes, including animal carcasses, and aid in decomposition and nutrients cycling in the environment. <br>
+         
+        <b> Human Benefits</b> <br>
+         In addition to their ecological role of reducing rodents and other pests, which help in reducing the spread of several diseases such as leptospirosis and hantavirus, stray dogs also offer social and emotional benefits to the communities. They can be informal companions to people, especially the lonely or those who live in isolation. Their presence also brings people together who shower them with care and affection. This enhances empathy and kindness in the community. <br>
+      </P>
     </div>
-    </footer>
-    <script>
-        const video = document.getElementById('vdo');
+        <h2> Pondicherry University Dog Hotspots:</h2>
+        <p>
+          Many dogs reside across the university campus, often forming social
+          groups and territories. Here are some observed dog populations in
+           <b>students' residential areas</b>:
+        </p>
+
+        <div class="fauna-container">
+          <!-- Girls Hostel Section -->
+          <div class="fauna-hostel">
+            <h3>Girls' Hostel Areas</h3>
+            <ul>
+              <li><b>Girls Mess:</b> 8 dogs, 3 puppies</li>
+              <li><b>Kannagi:</b> 5 dogs, 2 puppies</li>
+              <li><b>Madam Curie:</b> 4 dogs</li>
+              <li><b>Ganga:</b> 3 dogs</li>
+              <li><b>Yamuna:</b> 3 dogs</li>
+              <li><b>Saraswati:</b> 4 dogs</li>
+              <li><b>Kaveri:</b> 6 dogs, 2 puppies</li>
+              <li><b>Tea Time:</b> 3 dogs</li>
+            </ul>
+          </div>
+
+          <!-- Boys Hostel Section -->
+          <div class="fauna-hostel">
+            <h3>Boys' Hostel Areas</h3>
+            <ul>
+              <li><b>Kannadasan Hostel:</b> 3 dogs</li>
+              <li><b>Thiruvallur Stadium:</b> 5 dogs</li>
+              <li><b>MAKA Hostel:</b> 2 dogs</li>
+              <li><b>Kalidas Hostel:</b> 3 dogs</li>
+              <li><b>Valmiki Hostel:</b> 2 dogs</li>
+              <li><b>Kamban Hostel:</b> 3 dogs</li>
+              <li><b>Birsa Munda Hostel:</b> 3 dogs</li>
+              <li><b>Aurobindo Hostel:</b> 4 dogs, 7 puppies</li>
+              <li><b>Subramanian Bharati Hostel:</b> 1 dog</li>
+              <li><b>Pavendar Bharathidasan:</b> 1 dog</li>
+              <li><b>CV Raman Hostel:</b> 2 dogs</li>
+              <li><b>Illango Hostel:</b> 2 dogs</li>
+              <li><b>Tagore Hostel:</b> 2 dogs</li>
+              <li><b>Silver Jubilee Campus:</b> 9 dogs</li>
+            </ul>
+          </div>
+        </div>
+<div class="fauna-hostel">
+          <h3>TOTAL COUNT(APPROXIMATELY): 78 DOGS AND 14 PUPPIES </h3>
+          
+        </div>
+        <!-- Dog Behavior Facts -->
+        <div class="fauna-facts">
+          <h3>Common Dog Behavior Observations</h3>
+          <p>
+            <b>Territorial Instincts:</b> Dogs tend to establish territories
+            around hostels and cafeterias, where they feel safe and can access
+            food easily.
+          </p>
+          <p>
+            <b>Routine Activities:</b> Most dogs follow a predictable
+            routine—roaming in groups, resting in shaded areas, and scavenging
+            for food at specific times.
+          </p>
+          <p>
+            <b>Social Groups:</b> Dogs often form packs based on familiarity and
+            hierarchy. Conflicts between groups usually occur over food or
+            territory.
+          </p>
+          <p>
+            <b>Friendly vs. Cautious Behavior:</b> While some dogs are friendly
+            towards students, others remain cautious, especially at night or
+            when unfamiliar people approach.
+          </p>
+          <p>
+            <b>Mother Dogs & Puppies:</b> Female dogs with puppies are highly
+            protective and prefer to stay in quiet, less-disturbed areas.
+          </p>
+        </div>
+        <div>
+          <h2>Fauna of Pondicherry University: Crow Hotspots</h2>
+          <p>
+            Crows are a common sight across Pondicherry University, often seen in trees, near canteens, and around hostel rooftops. Known for their intelligence and adaptability, these birds thrive in the campus environment, foraging for food and nesting in tall trees. Their presence adds to the university's rich ecological diversity and offers opportunities for observing fascinating avian behavior up close.
+          </p>
+  
+          <div class="fauna-facts">
+            <h3>Common Crow Behavior Observations</h3>
+            <p>
+              <b>Territorial Instincts:</b> Crows often establish territories around tree clusters, rooftops, and food sources like garbage bins, canteens, and marketplaces. They defend these areas from other animals and rival crow groups.
+            </p>
+            <p>
+              <b>Routine Activities:</b>Crows typically follow a daily routine, scavenging for food in open areas, markets, and around human settlements, resting in shaded trees or high structures, often grooming themselves or socializing, gathering in large numbers (called a roost) at specific spots like tall trees or quiet areas for resting.
+            </p>
+            <p>
+              <b>Social Groups:</b>Crows live in social groups or flocks. These groups have a certain pecking order (hierarchy). Stronger, older crows dominates. Conflicts happen over food, space, or nesting spots. Crows often cooperate to chase away threats or alert each other to danger.
+            </p>
+            <p>
+              <b>Nesting & Parenting:</b> Crows build nests high up in trees or buildings using twigs, wires, and cloth pieces. Mother crows are highly protective of their nests and chicks. They often stay in quiet, undisturbed spots and can become aggressive if approached
+            </p>
+          </div>
+        </div>
+      </section>
       
-        video.addEventListener('timeupdate', () => {
-          if (video.currentTime >= 14) {
-            video.pause();
-            video.currentTime = 14; // freeze exactly at 14s
+    </div>
+
+    <!-- Google Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEowV4krMWS_FrAm70UP4wOAaBiZ3mvkQ&callback=initMap&v=weekly&libraries=visualization"
+      async
+      defer
+    ></script>
+
+    <script>
+      let currentScript = "scipt.js"; // Default Flora Map
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("fauna-facts-section").classList.add("hidden");
+      });
+
+      function switchMap(newScript, initFunction) {
+        console.log(`Switching to: ${newScript}`);
+        console.log(`Calling function: ${initFunction}`);
+
+        if (currentScript === newScript) return;
+
+        let oldScript = document.querySelector(
+          `script[src="${currentScript}"]`
+        );
+        if (oldScript) {
+          console.log(`Removing old script: ${currentScript}`);
+          oldScript.remove();
+        }
+
+        let scriptElement = document.createElement("script");
+        scriptElement.src = newScript;
+        scriptElement.defer = true;
+        scriptElement.onload = () => {
+          console.log(`Loaded script: ${newScript}`);
+
+          if (typeof window[initFunction] === "function") {
+            console.log(`Calling init function: ${initFunction}`);
+            window[initFunction]();
+          } else {
+            console.error(`Error: ${initFunction} is not defined!`);
           }
+
+          // Ensure the correct facts section is shown
+          let floraFacts = document.getElementById("flora-facts-section");
+          let faunaFacts = document.getElementById("fauna-facts-section");
+
+          if (newScript === "scipt.js") {
+            console.log("Showing Flora Facts, Hiding Fauna Facts");
+            floraFacts.classList.remove("hidden");
+            faunaFacts.classList.add("hidden");
+          } else if (newScript === "fauna.js") {
+            console.log("Showing Fauna Facts, Hiding Flora Facts");
+            faunaFacts.classList.remove("hidden");
+            floraFacts.classList.add("hidden");
+            console.log("Flora Facts Classes:", floraFacts.classList.value);
+            console.log("Fauna Facts Classes:", faunaFacts.classList.value);
+          } else {
+            console.error("Unknown script, no facts section updated.");
+          }
+        };
+
+        document.body.appendChild(scriptElement);
+        currentScript = newScript;
+      }
+
+      document
+        .getElementById("flora-btn")
+        .addEventListener("click", function () {
+          switchMap("scipt.js", "initMap");
         });
-        document.addEventListener("dblclick", function(e) {
-  e.preventDefault(); // Stops zooming, text selection, etc.
-});
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-});
-        </script>
-</body>
+
+      document
+        .getElementById("fauna-btn")
+        .addEventListener("click", function () {
+          switchMap("fauna.js", "initializeFaunaMap");
+        });
+    </script>
+  </body>
 </html>
