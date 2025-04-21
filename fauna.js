@@ -166,4 +166,13 @@
           }
         });
       }
-      
+      function showImage(src) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        modalImg.src = src;
+        modal.style.display = 'flex';
+    
+        modal.onclick = () => {
+          modal.style.display = 'none';
+        };
+      }
