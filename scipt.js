@@ -585,7 +585,7 @@ function generateInfoWindowContent(plant) {
   }
 
   return `<div class="info-window-content">
-      <b>${plant.name}</b><br>${plant.description}<br>
+      <b><i>${plant.name}</i></b><br>${plant.description}<br>
       ${galleryPreview}
     </div>`;
 }
