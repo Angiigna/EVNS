@@ -84,6 +84,7 @@ function initializeFaunaMap() {
             {
                 start: { lat:  12.028998, lng:79.848285  },
                 end: { lat: 12.029662, lng:79.849222  },
+                images: ["crows/maca.jpg"]
             },
             {
                 start: { lat:  12.021594, lng:79.853447  },
@@ -97,7 +98,7 @@ function initializeFaunaMap() {
             {
                 start: { lat: 12.020832, lng:79.857474 },
                 end: { lat: 12.0204, lng: 79.85731 },
-                images: ["crows/maca.jpg"]
+                images: ["crows/admin.jpg"]
             },
             {
               start: { lat: 12.0232, lng: 79.84741 },
