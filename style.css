@@ -302,3 +302,34 @@ header {
 .toggle-switch:hover {
   background-color: #580e94;
 }
+
+.crow-video-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.crow-video-section h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.crow-video-section video {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  height: 600px;
+  outline: none;
+}
+
+.video-caption {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+

@@ -1,5 +1,5 @@
 
-    function initializeFaunaMap() {
+function initializeFaunaMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: 12.018555710925714, lng: 79.85677099293513 },
           zoom: 17,
@@ -83,11 +83,12 @@
         const crowHotspots = [
             {
                 start: { lat:  12.028998, lng:79.848285  },
-                end: { lat: 12.029662, lng:79.849222  }
+                end: { lat: 12.029662, lng:79.849222  },
             },
             {
                 start: { lat:  12.021594, lng:79.853447  },
-                end: { lat: 12.021090, lng: 79.854954 }
+                end: { lat: 12.021090, lng: 79.854954 },
+                images: ["crows/admin.jpg"]
             },
             {
                 start: { lat: 12.020768, lng:79.855881 },
@@ -95,14 +96,39 @@
             },
             {
                 start: { lat: 12.020832, lng:79.857474 },
-                end: { lat: 12.0204, lng: 79.85731 }
+                end: { lat: 12.0204, lng: 79.85731 },
+                images: ["crows/maca.jpg"]
+            },
+            {
+              start: { lat: 12.0232, lng: 79.84741 },
+              end: { lat: 12.02284,  lng: 79.84694 },
+              count: '10-15',
+              images: ["crows/kc.jpg", "crows/kcnarmada.jpg", "crows/kc1.jpg"]
+            },
+            {
+              start: { lat: 12.0235, lng:  79.84856 },
+              end: { lat: 12.0229,  lng:  79.84815 },
+              count: '20+',
+              images: ["crows/mc.jpg", "crows/mc1.jpg", "crows/mc2.jpg"]
+            },
+            {
+              start: { lat: 12.02213, lng:  79.848 },
+              end: { lat: 12.02233,  lng:  79.84836 },
+              count: '30',
+              images: ["crows/mess.jpg"]
+            },
+            {
+              start: { lat: 12.0215, lng:  79.84935 },
+              end: { lat: 12.02103, lng: 79.84961 },
+              count: '10-15',
+              images: ["crows/sarasu.jpg"]
             },
         ];
       
         const crowMarkers = [];
         const crowHeatmapData = [];
       
-        crowHotspots.forEach(h => {
+        /*crowHotspots.forEach(h => {
           const lat = (h.start.lat + h.end.lat) / 2;
           const lng = (h.start.lng + h.end.lng) / 2;
       
@@ -123,7 +149,46 @@
           });
       
           crowMarkers.push(marker);
+        });*/
+        crowHotspots.forEach((h, index) => {
+          const lat = (h.start.lat + h.end.lat) / 2;
+          const lng = (h.start.lng + h.end.lng) / 2;
+        
+          crowHeatmapData.push({
+            location: new google.maps.LatLng(lat, lng),
+            weight: 5,
+          });
+        
+          const marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: null, // Start hidden
+            title: "Crow Hotspot",
+            icon: {
+              url: "/crowicon.png",
+              scaledSize: new google.maps.Size(38, 31),
+            },
+            animation: google.maps.Animation.DROP,
+          });
+        
+          const infoWindow = new google.maps.InfoWindow({
+            content: `
+              <div>
+                <h3>Crow Hotspot</h3>
+                <p>No. of crows: ${h.count || "Unknown"}</p>
+                <img src="${h.images?.[0] || 'fallback.jpg'}" style="width:150px; border-radius:8px;">
+                <br>
+                <button onclick='openGallery(${JSON.stringify(h.images || [])})' style="margin-top:6px; background:#6a0dad; color:white; border:none; padding:6px 12px; border-radius:5px;">View Gallery</button>
+              </div>
+            `
+          });
+        
+          marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+          });
+        
+          crowMarkers.push(marker);
         });
+        
       
         const crowHeatmap = new google.maps.visualization.HeatmapLayer({
           data: crowHeatmapData,
@@ -175,4 +240,7 @@
         modal.onclick = () => {
           modal.style.display = 'none';
         };
+
       }
+
+
