@@ -249,7 +249,41 @@ header {
 .hidden {
   display: none;
 }
-
+.circle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 2px dashed #ccc;
+    border-radius: 50%;
+  }
+  
+  .step {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: rotate(calc(var(--i) * 51.43deg)) translate(0, -250px) rotate(calc(var(--i) * -51.43deg));
+    transform-origin: center;
+    text-align: center;
+  }
+  
+  
+  .icon {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+  }
+  
+  .icon p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+  }
+  
 #toggleBtn{
   margin: 20px auto;
   display: block;
