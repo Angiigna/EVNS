@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+    :root {
+      --primary-green: #2c5046;
+      --accent-green: #a0db84;
+      --light-bg: #f5f5f5;
+      --white: #ffffff;
+      --black: #333;
+      --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--light-bg);
+      margin: 0;
+      padding: 0;
+      color: var(--black);
+    }
+    
+    .header {
+      background: var(--primary-green);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 4px solid var(--accent-green);
+    }
+    
+    .gallery-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .category-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .filter-btn {
+      padding: 10px 20px;
+      background: var(--primary-green);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent-green);
+      color: #1d1d1d;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 20px 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .gallery-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .media-container {
+      height: 160px;
+      overflow: hidden;
+    }
+    
+    .gallery-media {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .item-info {
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .item-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary-green);
+    }
+    
+    .item-category {
+      font-size: 0.8rem;
+      background: var(--accent-green);
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      color: #1d1d1d;
+    }
+    
+    /* Modal (unchanged except cleaned spacing) */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+    }
+    
+    .modal-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .modal-media {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+    
+    .close-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    
+    .prev-btn {
+      left: -50px;
+    }
+    
+    .next-btn {
+      right: -50px;
+    }
+    
+    @media (max-width: 600px) {
+      .media-container {
+        height: 120px;
+      }
+    
+      .item-name {
+        font-size: 0.9rem;
+      }
+    
+      .item-category {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+    </head>
+      <body>
+        <header class="header" div class="main-container">
+          <h2 class="gallery-title" id="pageTitle">Image Gallery Collections</h2>
+
+          <div class="category-filters">
+            <button class="filter-btn active" data-category="all">Show All</button>
+            <button class="filter-btn" data-category="dogs">Dogs Only</button>
+            <button class="filter-btn" data-category="plants">Plants Only</button>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be inserted here by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Image Modal -->
+        <div class="modal-overlay">
+          <div class="modal-container">
+            <div class="modal-header">
+              <div class="modal-title">
+                <span id="modalCategory"></span>: <span id="modalName"></span>
+              </div>
+              <span class="close-btn fas fa-times"></span>
+            </div>
+            <div class="modal-content">
+              <button class="nav-btn prev-btn fas fa-chevron-left"></button>
+              <img id="modalImage" class="modal-media" src="" alt="" />
+              <video
+                id="modalVideo"
+                class="modal-media"
+                controls
+                muted
+                loop
+                style="display: none"
+              ></video>
+              <button class="nav-btn next-btn fas fa-chevron-right"></button>
+            </div>
+          </div>
+        </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryGrid = document.getElementById("galleryGrid");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const modalOverlay = document.querySelector(".modal-overlay");
+        const modalImage = document.getElementById("modalImage");
+        const modalVideo = document.getElementById("modalVideo");
+        const modalName = document.getElementById("modalName");
+        const modalCategory = document.getElementById("modalCategory");
+        const closeBtn = document.querySelector(".close-btn");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const pageTitle = document.getElementById("pageTitle");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        let currentIndex = 0;
+        let currentItems = [];
+        let allItems = [];
+
+        // Extract current page from URL
+        const currentPage =
+          window.location.pathname.split("/").pop() || "index.html";
+
+        // Set active nav link
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+
+        // All image data
+        const imageData = [
+          // Dogs images
+          {
+            path: "dogs1/admin.jpg",
+            category: "dogs",
+            name: "Admin Building Dog",
+          },
+          {
+            path: "dogs1/auro5.jpg",
+            category: "dogs",
+            name: "Aurobindo Dog 5",
+          },
+          {
+            path: "dogs1/auro7.jpg",
+            category: "dogs",
+            name: "Aurobindo Dog 7",
+          },
+          {
+            path: "dogs1/birsa.jpg",
+            category: "dogs",
+            name: "Birsa Dog",
+          },
+          {
+            path: "dogs1/birsa2.jpg",
+            category: "dogs",
+            name: "Birsa Dog 2",
+          },
+          {
+            path: "dogs1/cv raman.jpg",
+            category: "dogs",
+            name: "CV Raman Dog",
+          },
+          {
+            path: "dogs1/cv raman1.jpg",
+            category: "dogs",
+            name: "CV Raman Dog 2",
+          },
+          {
+            path: "dogs1/girlstea2.jpg",
+            category: "dogs",
+            name: "Girls Tea Dog",
+          },
+          {
+            path: "dogs1/ilango.jpg",
+            category: "dogs",
+            name: "Ilango Dog",
+          },
+          {
+            path: "dogs1/kalidas.jpg",
+            category: "dogs",
+            name: "Kalidas Dog",
+          },
+          {
+            path: "dogs1/kalidas2.jpg",
+            category: "dogs",
+            name: "Kalidas Dog 2",
+          },
+          {
+            path: "dogs1/kamban.jpg",
+            category: "dogs",
+            name: "Kamban Dog",
+          },
+          {
+            path: "dogs1/kamban1.jpg",
+            category: "dogs",
+            name: "Kamban Dog 2",
+          },
+          {
+            path: "dogs1/kannadhasan2.jpg",
+            category: "dogs",
+            name: "Kannadhasan Dog",
+          },
+          {
+            path: "dogs1/kannadhasan3.jpg",
+            category: "dogs",
+            name: "Kannadhasan Dog 2",
+          },
+          {
+            path: "dogs1/kannagi.jpg",
+            category: "dogs",
+            name: "Kannagi Dog",
+          },
+          {
+            path: "dogs1/kannagi1.jpg",
+            category: "dogs",
+            name: "Kannagi Dog 2",
+          },
+          {
+            path: "dogs1/kannagi2.jpg",
+            category: "dogs",
+            name: "Kannagi Dog 3",
+          },
+          {
+            path: "dogs1/kannagi3.jpg",
+            category: "dogs",
+            name: "Kannagi Dog 4",
+          },
+          {
+            path: "dogs1/kannagi4.jpg",
+            category: "dogs",
+            name: "Kannagi Dog 5",
+          },
+          {
+            path: "dogs1/auropvid.mp4",
+            category: "dogs",
+            name: "Aurobindo Video",
+            isVideo: true,
+          },
+          {
+            path: "dogs1/auropvid1.mp4",
+            category: "dogs",
+            name: "Aurobindo Video 2",
+            isVideo: true,
+          },
+          {
+            path: "dogs/kannagivid.mp4",
+            category: "dogs",
+            name: "Kannagi Video",
+            isVideo: true,
+          },
+          { path: "dogs1/lhc.jpg", category: "dogs", name: "LHC Dog" },
+          { path: "dogs1/lhc1.jpg", category: "dogs", name: "LHC Dog 2" },
+          { path: "dogs1/maka.jpg", category: "dogs", name: "Maka Dog" },
+          {
+            path: "dogs1/maka1.jpg",
+            category: "dogs",
+            name: "Maka Dog 2",
+          },
+          { path: "dogs1/mess.jpg", category: "dogs", name: "Mess Dog" },
+          {
+            path: "dogs1/mess1.jpg",
+            category: "dogs",
+            name: "Mess Dog 2",
+          },
+          {
+            path: "dogs1/pavendar bharadhidasan.jpg",
+            category: "dogs",
+            name: "Pavendar Dog",
+          },
+          {
+            path: "dogs1/ponlait.jpg",
+            category: "dogs",
+            name: "Ponlait Dog",
+          },
+          {
+            path: "dogs1/saraswati.jpg",
+            category: "dogs",
+            name: "Saraswati Dog",
+          },
+          { path: "dogs1/sj.jpg", category: "dogs", name: "SJ Dog" },
+          {
+            path: "dogs1/subramaninan.jpg",
+            category: "dogs",
+            name: "Subramaninan Dog",
+          },
+          {
+            path: "dogs1/thiruvallur.jpg",
+            category: "dogs",
+            name: "Thiruvallur Dog",
+          },
+          {
+            path: "dogs1/thiruvallur3.jpg",
+            category: "dogs",
+            name: "Thiruvallur Dog 2",
+          },
+          {
+            path: "dogs1/valmiki1.jpg",
+            category: "dogs",
+            name: "Valmiki Dog",
+          },
+
+          // Plants images
+          {
+            path: "plants1/African locust bean.jpg",
+            category: "plants",
+            name: "African Locust Bean",
+          },
+          {
+            path: "plants1/African.jpg",
+            category: "plants",
+            name: "African Plant",
+          },
+          {
+            path: "plants1/africantulipsmall.jpg",
+            category: "plants",
+            name: "African Tulip",
+          },
+          {
+            path: "plants1/amrindcloseup.jpg",
+            category: "plants",
+            name: "Amrind Closeup",
+          },
+          {
+            path: "plants1/arecapalm.jpg",
+            category: "plants",
+            name: "Areca Palm",
+          },
+          {
+            path: "plants1/Ashoka Tree.jpg",
+            category: "plants",
+            name: "Ashoka Tree",
+          },
+          {
+            path: "plants1/autographtree.jpg",
+            category: "plants",
+            name: "Autograph Tree",
+          },
+          {
+            path: "plants1/azaelaflower.jpg",
+            category: "plants",
+            name: "Azaela Flower",
+          },
+          {
+            path: "plants1/badmintonballleaf.jpg",
+            category: "plants",
+            name: "Badminton Ball Leaf",
+          },
+          {
+            path: "plants1/Bamboo 1.jpg",
+            category: "plants",
+            name: "Bamboo",
+          },
+          {
+            path: "plants1/Banyan.jpg",
+            category: "plants",
+            name: "Banyan Tree",
+          },
+          {
+            path: "plants1/bougenvilleaflowers.jpg",
+            category: "plants",
+            name: "Bougenvillea Flowers",
+          },
+          {
+            path: "plants1/ButterTree.jpg",
+            category: "plants",
+            name: "Butter Tree",
+          },
+          {
+            path: "plants1/candeblara.jpg",
+            category: "plants",
+            name: "Candeblara",
+          },
+          {
+            path: "plants1/cherryplant.jpg",
+            category: "plants",
+            name: "Cherry Plant",
+          },
+          {
+            path: "plants1/chickoo.jpg",
+            category: "plants",
+            name: "Chickoo",
+          },
+          {
+            path: "plants1/Copper Leaf.jpg",
+            category: "plants",
+            name: "Copper Leaf",
+          },
+          {
+            path: "plants1/Copper Pod.jpg",
+            category: "plants",
+            name: "Copper Pod",
+          },
+          {
+            path: "plants1/copperleafplant.jpg",
+            category: "plants",
+            name: "Copper Leaf Plant",
+          },
+          {
+            path: "plants1/coralwoodpods.jpg",
+            category: "plants",
+            name: "Coralwood Pods",
+          },
+          {
+            path: "plants1/Earpodtree.jpg",
+            category: "plants",
+            name: "Earpod Tree",
+          },
+          {
+            path: "plants1/Empress tree, Paulownia tomentosa.jpg",
+            category: "plants",
+            name: "Empress Tree",
+          },
+          {
+            path: "plants1/Flametree.jpg",
+            category: "plants",
+            name: "Flame Tree",
+          },
+          {
+            path: "plants1/foxtailpalm.jpg",
+            category: "plants",
+            name: "Foxtail Palm",
+          },
+          {
+            path: "plants1/Gliricidia sepium.jpg",
+            category: "plants",
+            name: "Gliricidia Sepium",
+          },
+          {
+            path: "plants1/Indian Cork Tree, Millingtonia Hortensis.jpg",
+            category: "plants",
+            name: "Indian Cork Tree",
+          },
+          {
+            path: "plants1/jamuntree.jpg",
+            category: "plants",
+            name: "Jamun Tree",
+          },
+          {
+            path: "plants1/KapokTree.jpg",
+            category: "plants",
+            name: "Kapok Tree",
+          },
+          {
+            path: "plants1/lipsticktree.jpg",
+            category: "plants",
+            name: "Lipstick Tree",
+          },
+          {
+            path: "plants1/MangoTree.jpg",
+            category: "plants",
+            name: "Mango Tree",
+          },
+          {
+            path: "plants1/Mimosa Pudica.jpg",
+            category: "plants",
+            name: "Mimosa Pudica",
+          },
+          {
+            path: "plants1/mimosa.jpg",
+            category: "plants",
+            name: "Mimosa",
+          },
+          {
+            path: "plants1/Neem Tree, Azadirachta Indica.jpg",
+            category: "plants",
+            name: "Neem Tree",
+          },
+          {
+            path: "plants1/neemtree.jpg",
+            category: "plants",
+            name: "Neem Tree 2",
+          },
+          {
+            path: "plants1/peepalleaf.jpg",
+            category: "plants",
+            name: "Peepal Leaf",
+          },
+          {
+            path: "plants1/PilkanTree.jpg",
+            category: "plants",
+            name: "Pilkan Tree",
+          },
+          {
+            path: "plants1/pinkflower1.jpg",
+            category: "plants",
+            name: "Pink Flower",
+          },
+          {
+            path: "plants1/pinktrumpettree.jpg",
+            category: "plants",
+            name: "Pink Trumpet Tree",
+          },
+          {
+            path: "plants/raintree2.jpg",
+            category: "plants",
+            name: "Rain Tree",
+          },
+          {
+            path: "plants1/Red frangipani, Plumeria rubra.jpg",
+            category: "plants",
+            name: "Red Frangipani",
+          },
+          {
+            path: "plants1/rivertamrind.jpg",
+            category: "plants",
+            name: "River Tamrind",
+          },
+          {
+            path: "plants1/salix.jpg",
+            category: "plants",
+            name: "Salix",
+          },
+          {
+            path: "plants1/Sausage Tree.jpg",
+            category: "plants",
+            name: "Sausage Tree",
+          },
+          {
+            path: "plants1/Spathodea campanulata.jpg",
+            category: "plants",
+            name: "Spathodea Campanulata",
+          },
+          { path: "plants1/Teak.jpg", category: "plants", name: "Teak" },
+          {
+            path: "plants1/trumpetvineflower.jpg",
+            category: "plants",
+            name: "Trumpet Vine Flower",
+          },
+          {
+            path: "plants1/WildIndianAlmond.jpg",
+            category: "plants",
+            name: "Wild Indian Almond",
+          },
+          {
+            path: "plants1/yellowflameflower.jpg",
+            category: "plants",
+            name: "Yellow Flame Flower",
+          },
+          {
+            path: "plants1/yellowsilkcottonleaf.jpg",
+            category: "plants",
+            name: "Yellow Silk Cotton Leaf",
+          },
+        ];
+
+        // Initialize gallery based on current page
+        function initGallery() {
+          let filteredImages;
+
+          if (currentPage === "dogs.html") {
+            filteredImages = imageData.filter(
+              (item) => item.category === "dogs"
+            );
+            pageTitle.textContent = "Dogs Collection";
+            document.title = "Green Mapping - Dogs Gallery";
+          } else if (currentPage === "plants.html") {
+            filteredImages = imageData.filter(
+              (item) => item.category === "plants"
+            );
+            pageTitle.textContent = "Plants Collection";
+            document.title = "Green Mapping - Plants Gallery";
+          } else {
+            filteredImages = imageData;
+            pageTitle.textContent = "Images Gallery COllections";
+            document.title = "Green Mapping Gallery";
+          }
+
+          currentItems = filteredImages;
+          allItems = filteredImages;
+
+          renderGallery(currentItems);
+        }
+
+        // Render gallery items
+        function renderGallery(items) {
+          galleryGrid.innerHTML = "";
+
+          items.forEach((item, index) => {
+            const galleryItem = document.createElement("div");
+            galleryItem.className = "gallery-item";
+            galleryItem.dataset.category = item.category;
+            galleryItem.dataset.index = index;
+
+            const mediaContainer = document.createElement("div");
+            mediaContainer.className = "media-container";
+
+            let mediaElement;
+            if (item.isVideo) {
+              mediaElement = document.createElement("video");
+              mediaElement.src = item.path;
+              mediaElement.className = "gallery-media";
+              mediaElement.controls = true;
+              mediaElement.muted = true;
+              mediaElement.loop = true;
+            } else {
+              mediaElement = document.createElement("img");
+              mediaElement.src = item.path;
+              mediaElement.alt = item.name;
+              mediaElement.className = "gallery-media";
+              mediaElement.loading = "lazy";
+            }
+
+            mediaContainer.appendChild(mediaElement);
+
+            const itemInfo = document.createElement("div");
+            itemInfo.className = "item-info";
+
+            const itemName = document.createElement("div");
+            itemName.className = "item-name";
+            itemName.textContent = item.name;
+
+            const itemCategory = document.createElement("div");
+            itemCategory.className = "item-category";
+            itemCategory.textContent = item.category.toUpperCase();
+
+            itemInfo.appendChild(itemName);
+            itemInfo.appendChild(itemCategory);
+
+            galleryItem.appendChild(mediaContainer);
+            galleryItem.appendChild(itemInfo);
+
+            galleryItem.addEventListener("click", () => openModal(index));
+
+            galleryGrid.appendChild(galleryItem);
+          });
+        }
+
+        // Filter gallery items
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const category = btn.dataset.category;
+
+            if (category === "all") {
+              currentItems = allItems;
+            } else {
+              currentItems = allItems.filter(
+                (item) => item.category === category
+              );
+            }
+
+            renderGallery(currentItems);
+          });
+        });
+
+        // Modal functions
+        function openModal(index) {
+          currentIndex = index;
+          const item = currentItems[currentIndex];
+          const isVideo = item.isVideo;
+
+          modalName.textContent = item.name;
+          modalCategory.textContent = item.category.toUpperCase();
+
+          if (isVideo) {
+            modalImage.style.display = "none";
+            modalVideo.style.display = "block";
+            modalVideo.src = item.path;
+            modalVideo.play();
+          } else {
+            modalVideo.style.display = "none";
+            modalImage.style.display = "block";
+            modalImage.src = item.path;
+            modalImage.alt = item.name;
+          }
+
+          modalOverlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          modalOverlay.classList.remove("active");
+          document.body.style.overflow = "auto";
+          modalVideo.pause();
+        }
+
+        function navigateModal(direction) {
+          currentIndex =
+            (currentIndex + direction + currentItems.length) %
+            currentItems.length;
+          openModal(currentIndex);
+        }
+
+        // Event listeners
+        closeBtn.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", (e) => {
+          if (e.target === modalOverlay) {
+            closeModal();
+          }
+        });
+
+        prevBtn.addEventListener("click", () => navigateModal(-1));
+        nextBtn.addEventListener("click", () => navigateModal(1));
+
+        document.addEventListener("keydown", (e) => {
+          if (modalOverlay.classList.contains("active")) {
+            if (e.key === "Escape") {
+              closeModal();
+            } else if (e.key === "ArrowLeft") {
+              navigateModal(-1);
+            } else if (e.key === "ArrowRight") {
+              navigateModal(1);
+            }
+          }
+        });
+
+        // Initialize gallery
+        initGallery();
+      });
+    </script>
+  </body>
+</html>
+

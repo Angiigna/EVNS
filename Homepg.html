@@ -170,6 +170,131 @@ hr {
     border: 0;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.footer-card {
+    flex: 1;
+    min-width: 280px;
+    background: #2c6b5e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.footer-card:hover {
+    transform: translateY(-5px);
+}
+
+.footer-card h5 {
+    font-family: 'DM Serif Text', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #d7f4de;
+}
+
+.footer-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+.acknowledgment-section {
+    display: flex;
+    flex-wrap: wrap;
+    background: #2c6b5e;
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(58, 129, 7, 0.4);
+    gap: 30px;
+    align-items: center;
+}
+
+.ack-img {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.ack-img img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.caption {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #d7f4de;
+}
+.caption span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #c3e9d4;
+}
+
+.ack-text {
+    flex: 3;
+    min-width: 280px;
+}
+
+.ack-text h5 {
+    font-family: 'DM Serif Text', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #d7f4de;
+}
+
+.ack-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.team-photos {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.member {
+    width: 100px;
+    flex: 1 1 100px;
+}
+
+.member img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.member img:hover {
+    transform: scale(1.05);
+}
+
+.member p {
+    font-size: 13px;
+    margin-top: 8px;
+    color: #d7f4de;
+}
+
 </style>
 </head>
 
@@ -238,30 +363,95 @@ hr {
 
 <footer>
     <h4>About Us</h4>
-    <div class="row">
-        <div id="left">
+
+    <div class="acknowledgment-section">
+        <div class="ack-img">
+            <img src="/ProfilePhoto-Gajalakshmi-768x826.png" alt="Dr. S. Gajalakshmi">
+            <p class="caption">Dr. S. Gajalakshmi<br><span>Head of the Department</span></p>
+        </div>
+        <div class="ack-text">
+            <h5>Acknowledgment</h5>
+            <p>
+                We extend our heartfelt gratitude to <strong>Dr. S. Gajalakshmi</strong>, Head of the Department, for providing us with the invaluable opportunity to undertake and showcase this project under her guidance.
+            </p>
+            <p>
+                We also extend our sincere thanks to <strong>Dr. Manmohan</strong> and <strong>Dr. Kiran Kumar</strong>, whose expert guidance, technical suggestions, and insightful inputs played a pivotal role in shaping the direction and success of this project.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-card">
             <h5>Our Mission</h5>
             <p>
                 Pondicherry University Green Mapping is a passionate initiative to explore and document our campus's thriving biodiversity. Through storytelling, technology, and exploration, we aim to inspire awareness, respect, and responsibility toward the ecosystems that surround us.
             </p>
-            <br>
             <p>
                 By mapping plants, tracking wildlife, and uncovering hidden ecological patterns, we hope to create a living guide for students, researchers, and nature lovers alike.
             </p>
         </div>
 
-        <div id="right">
+        <div class="footer-card">
             <h5>Our Team</h5>
             <p>
                 We are a vibrant group of 3rd-year Integrated Computer Science students, united by a shared passion for nature and technology. Together, we crafted this interactive journey through the green heart of Pondicherry University.
             </p>
-            <p style="margin-top: 10px;">
+            <p>
                 With regards,<br>
                 Athul Krishnan TR • Boda Kaveri • Fuad PP • Gokul G • Lakshmi Nandana B • Mohan Raju • Shwetha P • Sivangi Sankar • Tuvvadoddi Chandu • Viswapriya R
             </p>
+            
+            </div>
+            
         </div>
     </div>
 </footer>
+</div> <!-- end of .footer-container -->
+
+<div class="team-photos">
+    <div class="member">
+        <img src="/team/Athul.jpg" alt="Athul Krishnan TR">
+        <p>Athul Krishnan TR</p>
+    </div>
+    <div class="member">
+        <img src="boda.jpg" alt="Boda Kaveri">
+        <p>Boda Kaveri</p>
+    </div>
+    <div class="member">
+        <img src="fuad.jpg" alt="Fuad PP">
+        <p>Fuad PP</p>
+    </div>
+    <div class="member">
+        <img src="/team/gokul.jpg" alt="Gokul G">
+        <p>Gokul G</p>
+    </div>
+    <div class="member">
+        <img src="/team/maalu.jpg" alt="Lakshmi Nandana B">
+        <p>Lakshmi Nandana B</p>
+    </div>
+    <div class="member">
+        <img src="mohan.jpg" alt="Mohan Raju">
+        <p>Mohan Raju</p>
+    </div>
+    <div class="member">
+        <img src="shwetha.jpg" alt="Shwetha P">
+        <p>Shwetha P</p>
+    </div>
+    <div class="member">
+        <img src="/team/me.jpg" alt="Sivangi Sankar">
+        <p>Sivangi Sankar</p>
+    </div>
+    <div class="member">
+        <img src="chandu.jpg" alt="Tuvvadoddi Chandu">
+        <p>Tuvvadoddi Chandu</p>
+    </div>
+    <div class="member">
+        <img src="viswa.jpg" alt="Viswapriya R">
+        <p>Viswapriya R</p>
+    </div>
+</div>
+
+
 
 <script>
 const video = document.getElementById('vdo');
