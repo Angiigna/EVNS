@@ -101,69 +101,7 @@ function initializeFaunaMap() {
                 end: { lat: 12.0204, lng: 79.85731 },
                 images: ["crows/admin.jpg"]
             },
-              //sj near electronic media dept
-              {
-                start: {lat:12.032398,lng:79.855640},
-                end: { lat:12.033390,lng: 79.855991},
-                count: 'SJ total 17'
-            },
-            //dept of eng
-            {
-                start:{lat:12.034609,lng:79.858915},
-                end:{lat:12.033973,lng:79.859764},
-                count: 'SJ total 17'
-
-            },
-            //near dept of polictics
-            {
-                start:{lat:12.033801, lng:79.856077},
-                end:{lat:12.034669, lng:79.857105},
-                count: 'SJ total 17'
-
-            },{
-                start:{lat:12.034907,lng: 79.858099},
-                end:{lat:12.034230, lng:79.859529},
-                count: 'SJ total 17'
-            },
-            //umisarc
-            {
-                start:{lat:12.030478,lng: 79.858553},
-                end:{lat:12.031452, lng:79.857969}
-            },
-            //srk hostel
-            {
-                start:{lat:12.028123, lng:79.847816},
-                end:{lat:12.029297, lng:79.848393},
-                count: 'Srk - 4 +6  +30  approx'
-            },
-             //aurobindo
-            {
-              start:{lat:12.028914, lng:79.852720},
-              end:{lat:12.029675, lng:79.852943},
-              count: '5'
-            },
-          //subramanian
-            {
-              start:{lat:12.028790, lng:79.852807},
-              end:{lat:12.027849, lng:79.853410},
-              count: '3'
-            },
-          //kannadasan
-            {
-              start:{lat:12.029865, lng:79.850523},
-              end:{lat:12.029199, lng:79.849762},
-              count: '4'
-            },
-          //tea-time to cv raman
-            {
-              start:{lat:12.027604, lng:79.853399},
-              end:{lat:12.027074,lng:79.852283}
-            },
-          //kv
-           {
-              start:{lat:12.028608,lng:79.856583},
-              end:{lat:12.029580,lng:79.856840}
-            },
+              
             {
               start: { lat: 12.0232, lng: 79.84741 },
               end: { lat: 12.02284,  lng: 79.84694 },
