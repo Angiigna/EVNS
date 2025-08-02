@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="flora.css">
+    
+</head>
+<body>
+    <div class="flora-page">
+        <!-- Header Section -->
+        <header>
+            <h1>Flora Collection</h1>
+            <select id="plant-filter">
+                <option value="all">All</option>
+                <option value="flower">Flower</option>
+                <option value="tree">Tree</option>
+                <option value="shrub">Shrub</option>
+            </select>
+            <input type="text" class="search-bar" placeholder="Search for plants..." onkeyup="filterPlants()">
+        </header>
+        
+      
+        <!-- Map Section -->
+        <div class="map-container" id="map-section">
+          <div id="flora-map"></div>
+      </div>
+
+    
+      
+        <!-- Flora Cards Section -->
+        <div class="flora-cards-container">
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Peltophorum pterocarpum, Copper Pod/1.jpg" alt="Copper Pod" />
+              <h3>Copper Pod (Peltophorum pterocarpum)</h3>
+              <button class="view-details-btn" data-plant-id="plant6">View Details</button>
+              <button class="view-on-map-btn" data-plant-id="plant6">View on Map</button>
+          </div>
+          <div class="flora-card" data-category="tree">
+            <img src="/Plants/KapokTree.jpg" alt="Kapok Tree" />
+            <h3>Kapok Tree (Ceiba pentandra)</h3>
+            <button class="view-details-btn" data-plant-id="plant21">View Details</button>
+            <button class="view-on-map-btn" data-plant-id="plant21">View on Map</button>
+        </div>
+          
+        <div class="flora-card" data-category="tree">
+          <img src="/Plants/African.jpg" alt="African Tulip Tree" />
+              <h3>African Tulip Tree (Spathodea campanulata)</h3>
+              <button class="view-details-btn" data-plant-id="plant7">View Details</button>
+              <button class="view-on-map-btn" data-plant-id="plant7">View on Map</button>
+          </div>
+            <div class="flora-card" data-category="tree">
+                <img src="/Plants/Bamboo/Bamboo 1.jpg" alt="Bamboo" />
+                <h3>Bamboo</h3>
+                <button class="view-details-btn" data-plant-id="plant1">View Details</button>
+                <button class="view-on-map-btn">View on Map</button>
+            </div>
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Sausage Tree, Kigelia Africana/1.jpg" alt="Sausage Tree" />
+                <h3>Sausage Tree (Kigelia africana)</h3>
+                <button class="view-details-btn" data-plant-id="plant1">View Details</button>
+                <button class="view-on-map-btn">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="shrub">
+              <img src="/Plants/Touch me not, Mimosa Pudica/2.jpg" alt="Touch-Me-Not" />
+                <h3>Touch-Me-Not (Mimosa pudica)</h3>
+                <button class="view-details-btn" data-plant-id="plant2">View Details</button>
+                <button class="view-on-map-btn">View on Map</button>
+            </div>
+            
+           
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Empress tree, Paulownia tomentosa.jpg" alt="Empress Tree" />
+                <h3>Empress Tree (Paulownia tomentosa)</h3>
+                <button class="view-details-btn" data-plant-id="plant9">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant9">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Neem Tree, Azadirachta Indica/unnamed.jpg" alt="Neem Tree" />
+                <h3>Neem Tree (Azadirachta indica)</h3>
+                <button class="view-details-btn" data-plant-id="plant11">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant11">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/MangoTree.jpg" alt="Mango Tree" />
+                <h3>Mango Tree (Mangifera indica)</h3>
+                <button class="view-details-btn" data-plant-id="plant16">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant16">View on Map</button>
+            </div>
+            
+           
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/jamuntree/jamuntree.jpg" alt="Jamun Tree" />
+                <h3>Jamun Tree or Indian Blackberry</h3>
+                <button class="view-details-btn" data-plant-id="plant26">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant26">View on Map</button>
+            </div>
+
+            <div class="flora-card" data-category="tree">
+              <img
+                src="/Plants/Red frangipani, Plumeria rubra.jpg"
+                alt="Red Frangipani"
+              />
+              <h3>Red Frangipani (Plumeria rubra)</h3>
+              <button class="view-details-btn" data-plant-id="plant10">View Details</button>
+              <button class="view-on-map-btn" data-plant-id="plant10">View on Map</button>
+          </div>
+            
+          <div class="flora-card" data-category="tree">
+            <img src="/Plants/Yelowsilkcotton/yellowsilkcotton.jpg" alt="Yellow Silk Cotton Tree" />
+                <h3>Yellow Silk Cotton Tree or Cochlospermum gossypium</h3>
+                <button class="view-details-btn" data-plant-id="plant27">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant27">View on Map</button>
+            </div>
+            <div class="flora-card" data-category="flower">
+                <img src="/Plants/pinktrumpet/pinktrumpetflower.jpg" alt="Pink Trumpet Tree" />
+                <h3>Pink Trumpet Tree or Tabebuia rosea tree</h3>
+                <button class="view-details-btn" data-plant-id="plant28">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant28">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/arecapalm.jpg" alt="Areca Palm" />
+                <h3>Dypsis lutescens or Areca Palm</h3>
+                <button class="view-details-btn" data-plant-id="plant29">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant29">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/badmintonballtree/badmintonbaltree.jpg" alt="Badminton Ball Tree" />
+                <h3>Badminton Ball Tree (Parkia biglandulosa)</h3>
+                <button class="view-details-btn" data-plant-id="plant46">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant46">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Indian Cork Tree, Millingtonia Hortensis.jpg" alt="Indian Cork Tree" />
+                <h3>Indian Cork Tree (Millingtonia hortensis)</h3>
+                <button class="view-details-btn" data-plant-id="plant12">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant12">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/ButterTree.jpg" alt="Indian Butter Tree" />
+                <h3>Indian Butter Tree (Madhuca longifolia)</h3>
+                <button class="view-details-btn" data-plant-id="plant15">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant15">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/cherryplant.jpg" alt="Cherry Tree" />
+                <h3>Cherry Tree (Prunus species)</h3>
+                <button class="view-details-btn" data-plant-id="plant17">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant17">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/Gliricidia sepium.jpg" alt="Madre de Cacao" />
+                <h3>Madre de Cacao (Gliricidia sepium)</h3>
+                <button class="view-details-btn" data-plant-id="plant18">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant18">View on Map</button>
+            </div>
+            <!-- id repeated with below-->
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/banyan tree.jpg" alt="Banyan Tree" />
+                <h3>Banyan Tree (Ficus benghalensis)</h3>
+                <button class="view-details-btn" data-plant-id="plant19">View Details</button>
+                <button class="view-on-map-btn">View on Map</button>
+            </div>
+            
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/WildIndianAlmond.jpg" alt="Wild Indian Almond" />
+                <h3>Wild Indian Almond (Sterculia foetida)</h3>
+                <button class="view-details-btn" data-plant-id="plant19">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant19">View on Map</button>
+            </div>
+            <div class="flora-card" data-category="tree">
+              <img src="/Plants/PilkanTree.jpg" alt="Pilkhan Tree" />
+                <h3>Pilkhan Tree (Ficus virens)</h3>
+                <button class="view-details-btn" data-plant-id="plant22">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant22">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/Teak.jpg" alt="Teak" />
+                <h3>Teak (Tectona grandis)</h3>
+                <button class="view-details-btn" data-plant-id="plant24">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant24">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/Flametree.jpg" alt="Flame tree" />
+                <h3>Flame Tree (Delonix regia)</h3>
+                <button class="view-details-btn" data-plant-id="plant25">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant25">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/earpodtree/Earpodtree.jpg" alt="Earpod tree" />
+                <h3>Earpod Tree (Enterolobium cyclocarpum)</h3>
+                <button class="view-details-btn" data-plant-id="plant4">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant4">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/autographtree.jpg" alt="Autograph Tree" />
+                <h3>Autograph Tree (Clusia rosea)</h3>
+                <button class="view-details-btn" data-plant-id="plant31">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant31">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/tamrind/amrindcloseup.jpg" alt="Tamarind Tree" />
+                <h3>Tamarind Tree (Tamarindus indica)</h3>
+                <button class="view-details-btn" data-plant-id="plant32">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant32">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/peepal/peepaltree.jpg" alt="Peepal Tree" />
+                <h3>Peepal Tree (Ficus religiosa)</h3>
+                <button class="view-details-btn" data-plant-id="plant33">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant33">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/trumpetvine/white trumpet vine.jpg" alt="White Trumpet Vine" />
+                <h3>White Trumpet Vine (Brugmansia suaveolens)</h3>
+                <button class="view-details-btn" data-plant-id="plant34">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant34">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/bougenvillea/bougenvillea.jpg" alt="Bougainvillea" />
+                <h3>Bougainvillea (Bougainvillea species)</h3>
+                <button class="view-details-btn" data-plant-id="plant35">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant35">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/lipsticktree.jpg" alt="Lipstick Tree" />
+                <h3>Lipstick Tree (Bixa orellana)</h3>
+                <button class="view-details-btn" data-plant-id="plant36">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant36">View on Map</button>
+              </div>
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/dragonbones/candeblara.jpg" alt="Dragon Bones/Candelabra Plant" />
+                <h3>Dragon Bones/Candelabra Plant (Euphorbia lactea)</h3>
+                <button class="view-details-btn" data-plant-id="plant37">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant37">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/chickoo/chicootree.jpg" alt="Chiku/Sapodilla" />
+                <h3>Chiku/Sapodilla (Manilkara zapota)</h3>
+                <button class="view-details-btn" data-plant-id="plant12">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant12">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/mimosa/mimosa.jpg" alt="Mimosa Tree" />
+                <h3>Mimosa Tree (Albizia julibrissin)</h3>
+                <button class="view-details-btn" data-plant-id="plant39">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant39">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/rivertamrind.jpg" alt="River Tamarind" />
+                <h3>River Tamarind (Leucaena leucocephala)</h3>
+                <button class="view-details-btn" data-plant-id="plant40">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant40">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/foxtailpalm/foxtailpalmdroop.jpg" alt="Foxtail Palm" />
+                <h3>Foxtail Palm (Wodyetia bifurcata)</h3>
+                <button class="view-details-btn" data-plant-id="plant41">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant41">View on Map</button>
+              </div>
+              <div class="flora-card" data-category="flower">
+                <img src="/Plants/azaela/azaelaflower.jpg" alt="Azalea Plant" />
+                <h3>Azalea Plant (Rhododendron species)</h3>
+                <button class="view-details-btn" data-plant-id="plant42">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant42">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/raintree/raintree2.jpg" alt="Rain Tree" />
+                <h3>Rain Tree (Samanea saman)</h3>
+                <button class="view-details-btn" data-plant-id="plant43">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant43">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/coralwood/coralwoodtree.jpg" alt="Coralwood Tree" />
+                <h3>Coralwood Tree (Red Sandalwood or Red Bead Tree)</h3>
+                <button class="view-details-btn" data-plant-id="plant18">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant18">View on Map</button>
+              </div>
+              
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/copperleaf/copperleafplant.jpg" alt="Copper Leaf" />
+                <h3>Copper Leaf (Acalypha wilkesiana)</h3>
+                <button class="view-details-btn" data-plant-id="plant45">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant45">View on Map</button>
+              </div>
+              
+              <div class="flora-card" data-category="tree">
+                <img src="/Plants/yellowflame/yellowflameflower.jpg" alt="Yellow Flame" />
+                <h3>Yellow Flame (Peltophorum pterocarpum)</h3>
+                <button class="view-details-btn" data-plant-id="plant48">View Details</button>
+                <button class="view-on-map-btn" data-plant-id="plant48">View on Map</button>
+            </div>
+
+        </div>
+
+        <!-- Modal for Plant Details -->
+        <div id="plantModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h4 id="plant-name"></h4>
+                <p id="plant-origin"></p>
+                <p id="plant-description"></p>
+                <img id="plant-image" src="" alt="Plant Image" class="img-fluid">
+                <p id="plant-location"></p>
+                <p id="scientific-name"></p>
+                <button id="view-map-btn" onclick="showLocationOnMap()">View on Map</button>
+            </div>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination">
+            <button class="prev-btn">Previous</button>
+            <span class="page-number">1</span>
+            <button class="next-btn">Next</button>
+        </div>
+      
+        <!-- Back Button -->
+        <div class="back-button">
+            <button onclick="window.history.back()">Back</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="plantDetailsData.js"></script>
+    <script src="floraa.js"></script>
+</body>
+</html>
