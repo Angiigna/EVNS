@@ -110,4 +110,73 @@ footer {
     flex: 1 1 100%;
   }
 }
+#credits {
+  padding: 60px 0;
+  background: #f0f8f6;
+  text-align: center;
+}
+
+#credits h2 {
+  font-family: 'DM Serif Text', serif;
+  font-size: 36px;
+  color: #2c5046;
+  margin-bottom: 10px;
+}
+
+.credits-intro {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #3d5d54;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+.credits-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.credits-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start; /* Default row alignment */
+}
+
+.credits-row.centered {
+  justify-content: center; /* Center align the 2nd row */
+}
+
+.credits-member {
+  width: 100px;
+  text-align: center;
+  flex: 1 1 100px;
+}
+
+.credits-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #2c5046;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.credits-member img:hover {
+  transform: scale(1.05);
+}
+
+.credits-member p {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #224740;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
 
