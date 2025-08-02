@@ -1,11 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dogs</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fauna</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="flora.css" />
+  </head>
+  <body>
+    <div class="flora-page">
+      <!-- Header Section -->
+      <header>
+        <h1>Fauna Collection</h1>
+        <select id="plant-filter">
+          <option value="all">All</option>
+          <option value="hostel">Hostel</option>
+          <option value="campus">Campus</option>
+        </select>
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search for locations..."
+          onkeyup="filterPlants()"
+        />
+      </header>
+
+      <!-- Map Section -->
+      <div class="map-container" id="map-section">
+        <div id="flora-map"></div>
+      </div>
+
+      <!-- Fauna Cards Section -->
+      <!-- Fauna Cards Section -->
+      <div class="flora-cards-container">
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Girls/kannagi.jpg" alt="Kannagi Hostel Dogs" />
+          <h3>Kannagi Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog2">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="campus">
+          <img src="/Dogs/campus/mess.jpg" alt="Mother Teresa Mess Dogs" />
+          <h3>Mother Teresa Mess</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog3">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Girls/saraswati.jpg" alt="Saraswati Hostel Dogs" />
+          <h3>Saraswati Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog7">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="campus">
+          <img src="/Dogs/campus/girlstea1.jpg" alt="Girls Tea Time Dogs" />
+          <h3>Girls Tea Time</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog9">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/kannadhasan.jpg" alt="Kannadasan Hostel Dogs" />
+          <h3>Kannadasan Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog10">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="campus">
+          <img
+            src="/Dogs/Boys/thiruvallur.jpg"
+            alt="Thiruvallur Stadium Dogs"
+          />
+          <h3>Thiruvallur Stadium</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog11">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/maka.jpg" alt="Maka Hostel Dogs" />
+          <h3>Maka Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog12">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/kamban1.jpg" alt="Kamban Hostel Dogs" />
+          <h3>Kamban Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog13">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/birsa.jpg" alt="Birsa Munda Hostel Dogs" />
+          <h3>Birsa Munda Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog14">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/auro7.jpg" alt="Aurobindo Hostel Dogs" />
+          <h3>Aurobindo Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog15">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/kalidas1.jpg" alt="Kalidas Hostel Dogs" />
+          <h3>Kalidas Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog16">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/valmiki1.jpg" alt="Valmiki Hostel Dogs" />
+          <h3>Valmiki Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog17">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img
+            src="/Dogs/Boys/subramaninan.jpg"
+            alt="Subramanian Bharati Hostel Dogs"
+          />
+          <h3>Subramanian Bharati Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog18">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img
+            src="/Dogs/Boys/pavendar bharadhidasan.jpg"
+            alt="Pavendar Bharathidasan Hostel Dogs"
+          />
+          <h3>Pavendar Bharathidasan Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog19">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/cv raman1.jpg" alt="CV Raman Hostel Dogs" />
+          <h3>CV Raman Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog20">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="hostel">
+          <img src="/Dogs/Boys/ilango.jpg" alt="Illango Hostel Dogs" />
+          <h3>Illango Hostel</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog21">
+            View on Map
+          </button>
+        </div>
+
+        <div class="flora-card" data-category="campus">
+          <img src="/Dogs/campus/sj.jpg" alt="Silver Jubilee Campus Dogs" />
+          <h3>Silver Jubilee Campus</h3>
+
+          <button class="view-on-map-btn" data-plant-id="dog23">
+            View on Map
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal for Dog Details -->
+      <div id="plantModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h4 id="plant-name">Dog Location</h4>
+          <p id="plant-origin"></p>
+          <p id="plant-description"></p>
+          <img id="plant-image" src="" alt="Dog Image" class="img-fluid" />
+          <p id="plant-location"></p>
+          <p id="scientific-name"></p>
+          <button id="view-map-btn" onclick="showLocationOnMap()">
+            View on Map
+          </button>
+        </div>
+      </div>
+
+      <!-- Pagination Section -->
+      <div class="pagination">
+        <button class="prev-btn">Previous</button>
+        <span class="page-number">1</span>
+        <button class="next-btn">Next</button>
+      </div>
+
+      <!-- Back Button -->
+      <div class="back-button">
+        <button onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="dogDetailsData.js"></script>
+    <script src="dogs.js"></script>
+  </body>
 </html>
