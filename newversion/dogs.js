@@ -1,7 +1,7 @@
 let map;
 const markers = {};
-let currentDogLat = 12.0186;
-let currentDogLng = 79.8567;
+let currentDogLat = 12.022884311796183;
+let currentDogLng = 79.84816914861624;
 
 const mapContainer = document.querySelector(".map-container");
 
@@ -70,7 +70,7 @@ const dogDetailsData = {
     image: "Dogs/campus/girlstea1.jpg",
   },
   dog10: {
-    name: "KANNADASAN HOSTEL",
+    name: "KABIR DAS HOSTEL",
     lat: 12.029370766606938,
     lng: 79.84931225246086,
     description: "No. of dogs: 3",
@@ -170,7 +170,7 @@ const dogDetailsData = {
 };
 
 function initMap() {
-  map = L.map("flora-map").setView([12.01676, 79.85325], 16);
+  map = L.map("flora-map").setView([12.022884311796183, 79.84816914861624], 16);
 
   const osm = L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -278,3 +278,25 @@ window.onload = function () {
     });
   });
 };
+let searchTimeout;
+function filterPlants() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const query = document.querySelector(".search-bar").value.toLowerCase();
+    const dogCards = document.querySelectorAll(".flora-card");
+
+    dogCards.forEach((card) => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = title.includes(query) ? "block" : "none";
+    });
+  }, 150); // Debounce delay
+}
+function goBack() {
+  if (document.referrer) {
+    // Referrer exists — go back normally
+    window.history.back();
+  } else {
+    // No referrer — fallback to default
+    window.location.href = "new.html";
+  }
+}
