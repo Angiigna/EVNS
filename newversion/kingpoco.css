@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap");
+
+body {
+  background: linear-gradient(to bottom, #fdf6e3, #fffaf0);
+  color: #3a2d0c;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Allegra", sans-serif;
+  color: #8b0000;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #d4af37;
+}
+
+h2 {
+  text-align: center;
+  color: #4b2e0f;
+  font-size: 1.8rem;
+  margin: 30px 0 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 10px 0;
+  color: #333;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+b {
+  color: #6d4214;
+}
+
+.fauna-facts {
+  background: #fff8dc;
+  border: 2px solid #d4af37;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(139, 69, 19, 0.3);
+}
+
+.fauna-hostel {
+  background: #f7f1e1;
+  border: 1px solid #c2a45d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.fauna-hostel ul {
+  list-style: square;
+  padding-left: 25px;
+}
+
+.fauna-hostel ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #5b3c11;
+}
+
+.flora-cards-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.flora-card {
+  background: #fffaf0;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.flora-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #d4af37;
+}
+
+.flora-card h3 {
+  font-size: 1.4rem;
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+.flora-card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.crow-video-section {
+  margin-top: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid #c6a664;
+}
+
+.crow-video-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #4b2e0f;
+}
+
+.crow-video-section video {
+  max-width: 90%;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+}
+
+.video-caption {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .fauna-facts {
+    padding: 20px;
+  }
+
+  .flora-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flora-card {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .fauna-hostel ul li {
+    font-size: 0.95rem;
+  }
+
+  .flora-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .crow-video-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .crow-video-section video {
+    width: 100%;
+  }
+}

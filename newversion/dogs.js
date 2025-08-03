@@ -300,3 +300,9 @@ function goBack() {
     window.location.href = "new.html";
   }
 }
+document.getElementById("plant-filter").addEventListener("change", function () {
+  const selected = this.value;
+  if (selected === "poco") {
+    window.location.href = "kingpoco.html";
+  }
+});
