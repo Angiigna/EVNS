@@ -480,6 +480,83 @@ avian-card h3 {
   font-size: 0.95rem;
   color: #333;
 }
+/* Modal container */
+#avianModal.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content */
+#avianModal .modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 600px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+/* Close button */
+#avianModal .close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+}
+
+#avianModal .close:hover {
+  color: #000;
+}
+
+/* Modal heading and paragraph */
+#hotspot-name {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+#hotspot-count {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Image gallery inside modal */
+#hotspot-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+/* Modal button */
+#avianModal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#avianModal button:hover {
+  background-color: #0056b3;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -569,6 +646,23 @@ avian-card h3 {
     font-size: 0.95rem;
     padding: 7px;
     margin-bottom: 6px;
+  }
+  #avianModal .modal-content {
+    width: 70%;
+    padding: 20px;
+  }
+
+  #hotspot-name {
+    font-size: 1.4rem;
+  }
+
+  #hotspot-count {
+    font-size: 0.95rem;
+  }
+
+  #avianModal button {
+    padding: 8px 18px;
+    font-size: 0.95rem;
   }
 }
 
@@ -670,6 +764,24 @@ avian-card h3 {
     padding: 6px;
     margin-bottom: 5px;
   }
+
+  #avianModal .modal-content {
+    width: 90%;
+    padding: 18px;
+  }
+
+  #hotspot-name {
+    font-size: 1.25rem;
+  }
+
+  #hotspot-count {
+    font-size: 0.9rem;
+  }
+
+  #avianModal button {
+    padding: 7px 16px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 375px) {
@@ -757,5 +869,23 @@ avian-card h3 {
     font-size: 0.85rem;
     padding: 5px;
     margin-bottom: 4px;
+  }
+  #avianModal .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #hotspot-name {
+    font-size: 1.1rem;
+  }
+
+  #hotspot-count {
+    font-size: 0.85rem;
+  }
+
+  #avianModal button {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 8px;
   }
 }
