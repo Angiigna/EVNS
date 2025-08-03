@@ -9,6 +9,7 @@
 }
 
 body {
+  font-family: "Secure Sans Pro", serif;
   padding-top: 56px;
   background: linear-gradient(135deg, #e0f7fa 0%, #e8f5e9 50%, #fffde7 100%);
   background-attachment: fixed;
@@ -21,7 +22,13 @@ html {
 .navbar-nav {
   margin: 0 auto;
 }
-
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800; /* or use 700 for bold */
+}
+p {
+  font-size: 20px;
+}
 .navbar-nav .nav-link {
   font-size: 1.3rem;
   font-weight: 600;
@@ -61,7 +68,7 @@ section {
 .custom-hr {
   border: 0;
   height: 2px;
-  background-color: #ccc;
+  background-color: #383838;
   margin: 40px 60px;
 }
 
