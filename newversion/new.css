@@ -185,3 +185,10 @@ footer {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
+
+.member-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Fixes layout spacing issue */
+}
+
