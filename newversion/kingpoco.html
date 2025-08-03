@@ -7,13 +7,27 @@
     <link rel="stylesheet" href="kingpoco.css" />
   </head>
   <body>
-    <audio autoplay loop>
+    <audio id="pocoAudio" loop>
       <source
-        src="../Dogs/Girls/Lindiwe Mkhize - Circle of LifeNants' Ingonyama.flac"
-        type="audio/flac"
+        src="../Dogs/Girls/Lindiwe Mkhize - Circle of LifeNants' Ingonyama.mp3"
+        type="audio/mp3"
       />
-      Your browser does not support the audio element.
     </audio>
+
+    <script>
+      // Start playing after first click anywhere
+      window.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("pocoAudio");
+        document.addEventListener(
+          "click",
+          () => {
+            audio.volume = 0.2;
+            audio.play().catch((err) => console.log("Audio play failed:", err));
+          },
+          { once: true }
+        );
+      });
+    </script>
 
     <div class="fauna-facts">
       <h1>
