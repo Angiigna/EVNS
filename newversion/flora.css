@@ -480,3 +480,282 @@ avian-card h3 {
   font-size: 0.95rem;
   color: #333;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .search-bar,
+  #plant-filter {
+    width: 100%;
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .flora-cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .flora-card img {
+    height: 150px;
+  }
+
+  .flora-card h3 {
+    font-size: 1rem;
+  }
+
+  .flora-card p {
+    font-size: 0.85rem;
+  }
+
+  .view-details-btn,
+  .view-on-map-btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  #flora-map,
+  #avian-map {
+    height: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .crow-video-section video {
+    width: 100%;
+  }
+  .icon {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .icon p {
+    font-size: 12px;
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .step {
+    transform: rotate(calc(var(--i) * 51.43deg)) translate(0, -140px)
+      rotate(calc(var(--i) * -51.43deg));
+  }
+  .fauna-hostel ul li {
+    font-size: 0.95rem;
+    padding: 7px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  .search-bar,
+  #plant-filter {
+    width: 100%;
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .flora-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .flora-card img {
+    height: 130px;
+  }
+
+  .flora-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .flora-card p {
+    font-size: 0.8rem;
+  }
+
+  .view-details-btn,
+  .view-on-map-btn {
+    padding: 5px 9px;
+    font-size: 0.85rem;
+  }
+
+  .map-container {
+    height: 260px;
+  }
+
+  #flora-map,
+  #avian-map {
+    height: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .crow-video-section video {
+    width: 100%;
+  }
+
+  .icon {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .icon p {
+    font-size: 11px;
+  }
+
+  .circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .step {
+    transform: rotate(calc(var(--i) * 51.43deg)) translate(0, -100px)
+      rotate(calc(var(--i) * -51.43deg));
+  }
+  .fauna-hostel ul {
+    padding-left: 10px;
+  }
+
+  .fauna-hostel ul li {
+    font-size: 0.9rem;
+    padding: 6px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 6px 14px;
+  }
+
+  .search-bar,
+  #plant-filter {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  .flora-cards-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .flora-card img {
+    height: 120px;
+  }
+
+  .flora-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .flora-card p {
+    font-size: 0.75rem;
+  }
+
+  .view-details-btn,
+  .view-on-map-btn {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .map-container {
+    height: 240px;
+  }
+
+  .modal-content {
+    width: 96%;
+    padding: 14px;
+  }
+
+  .icon {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .icon p {
+    font-size: 10px;
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .step {
+    transform: rotate(calc(var(--i) * 51.43deg)) translate(0, -80px)
+      rotate(calc(var(--i) * -51.43deg));
+  }
+
+  .crow-video-section video {
+    width: 100%;
+  }
+  .fauna-hostel ul {
+    padding-left: 8px;
+  }
+
+  .fauna-hostel ul li {
+    font-size: 0.85rem;
+    padding: 5px;
+    margin-bottom: 4px;
+  }
+}
