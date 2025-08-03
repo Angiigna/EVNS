@@ -59,6 +59,7 @@ header {
 }
 header h1 {
   font-weight: 700; /* or 600, 500, etc. */
+  font-family: "Playfair Display", serif;
 }
 
 /* Google Map */
