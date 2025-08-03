@@ -197,5 +197,5 @@ function createCrowCards() {
 
 window.onload = function () {
   initMap();
-  createCrowCards(); // 👈 Add this here
+  createCrowCards(); 
 };
