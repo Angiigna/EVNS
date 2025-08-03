@@ -148,5 +148,54 @@ document.querySelectorAll('.view-details-btn').forEach(button => {
   });
 });
 
-// Initialize the map when the page loads
-window.onload = initMap;
+function createCrowCards() {
+  const galleryContainer = document.getElementById('crow-gallery');
+  if (!galleryContainer) return;
+
+  for (const hotspotId in crowDetailsData) {
+    const hotspot = crowDetailsData[hotspotId];
+
+    // Use first image if available, otherwise fallback image
+    const imageSrc = (hotspot.images && hotspot.images.length > 0)
+      ? hotspot.images[0]
+      : '/crows/default.jpg';
+
+    // Optional: derive location name from ID or give a fallback name
+    const locationName = `Hotspot ${hotspotId.replace('hotspot', '')}`;
+
+    const card = document.createElement('div');
+    card.className = 'flora-card';
+    card.innerHTML = `
+  <img src="${imageSrc}" alt="${locationName}" />
+  <h3>${locationName}</h3>
+  <div class="button-group">
+    <button class="view-details-btn" data-hotspot-id="${hotspotId}">Details</button>
+    <button class="view-on-map-btn" data-hotspot-id="${hotspotId}">Map</button>
+  </div>
+`;
+
+
+    galleryContainer.appendChild(card);
+  }
+
+  // Attach event listeners AFTER cards are added
+  document.querySelectorAll('.view-on-map-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const hotspotId = this.getAttribute('data-hotspot-id');
+      document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+      focusHotspot(hotspotId);
+    });
+  });
+
+  document.querySelectorAll('.view-details-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const hotspotId = this.getAttribute('data-hotspot-id');
+      showDetails(hotspotId);
+    });
+  });
+}
+
+window.onload = function () {
+  initMap();
+  createCrowCards(); // 👈 Add this here
+};
