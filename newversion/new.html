@@ -48,10 +48,34 @@
         </ul>
       </div>
 
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+   <form class="d-flex" onsubmit="return searchPage()">
+  <input id="globalSearchInput" class="form-control me-2" type="search" placeholder="Search anything...">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<script>
+function searchPage() {
+  const query = document.getElementById("globalSearchInput").value.trim().toLowerCase();
+  if (!query) return false; // prevent empty searches
+
+  const textElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, span, div");
+
+  for (let el of textElements) {
+    // Skip elements with children (e.g. nested layouts)
+    if (el.children.length > 0) continue;
+
+    const text = el.textContent.toLowerCase();
+    if (text.includes(query)) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      return false; // stop form submission
+    }
+  }
+
+  alert("No match found.");
+  return false;
+}
+</script>
+
+
     </div>
   </nav>
 
