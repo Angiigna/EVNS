@@ -25,13 +25,13 @@ const crowDetailsData = {
     start: { lat: 12.0232, lng: 79.84741 },
     end: { lat: 12.02284, lng: 79.84694 },
     count: "10-15",
-    images: ["../crows/kc.jpg", "/crows/kcnarmada.jpg", "/crows/kc1.jpg"],
+    images: ["../crows/kc.jpg", "../crows/kcnarmada.jpg", "../crows/kc1.jpg"],
   },
   MadamCurie: {
     start: { lat: 12.0235, lng: 79.84856 },
     end: { lat: 12.0229, lng: 79.84815 },
     count: "20+",
-    images: ["../crows/mc.jpg", "/crows/mc1.jpg", "/crows/mc2.jpg"],
+    images: ["../crows/mc.jpg", "../crows/mc1.jpg", "../crows/mc2.jpg"],
   },
   MotherTheresa: {
     start: { lat: 12.02213, lng: 79.848 },
